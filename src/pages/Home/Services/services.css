@@ -1,0 +1,17 @@
+.services-container{
+    padding: 50px 0;
+}
+.services-title{
+    display: inline-block;
+    /* transition: 2.5s; */
+    /* padding-bottom: 2px; */
+}
+.services-title::after{
+    content: '';
+    margin: 0 auto;
+    
+    width: 50%;
+    height: 3px;
+    display: block;
+    background-color: blue;
+}

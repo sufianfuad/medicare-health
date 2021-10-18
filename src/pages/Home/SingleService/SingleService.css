@@ -1,0 +1,26 @@
+.service-card{
+    height: 530px;
+    margin:10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.service-card:hover{
+    border: none;
+    box-shadow: 3px 6px 10px lightgray ;
+    
+}
+.service-img img{
+    width: 100%;
+    border-radius: 10px;
+}
+.service-info{
+    /* padding: 5px; */
+    text-align: center;
+}
+.service-info p{
+    text-align: left;
+}
+.details-btn{
+    border: 1px solid gray;
+}

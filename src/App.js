@@ -16,6 +16,7 @@ import Services from './pages/Home/Services/Services';
 import Login from './pages/Login/Login/Login';
 import Appointment from './pages/Home/Appointment/Appointment';
 import ErrorFound from './pages/ErrorFound/ErrorFound';
+import Footer from './pages/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -42,8 +43,9 @@ function App() {
           <Route path="*">
             <ErrorFound></ErrorFound>
           </Route>
-        </Switch>
 
+        </Switch>
+        <Footer></Footer>
       </Router>
     </div>
   );
