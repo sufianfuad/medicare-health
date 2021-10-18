@@ -1,9 +1,15 @@
 import React from 'react';
+//
+// import Banner from '../Banner/Banner';
+// import Services from '../Services/Services';
 
 const Home = () => {
     return (
-        <div>
-            <h2>This is Landing Page</h2>
+        <div id="home">
+            {/* 
+            <Banner></Banner>
+            <Services></Services> */}
+
         </div>
     );
 };
