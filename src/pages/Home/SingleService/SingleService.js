@@ -4,21 +4,25 @@ import { Link } from 'react-router-dom';
 import './SingleService.css'
 
 const SingleService = ({ service }) => {
-    const { name, img, description } = service;
+    const { id, name, img, description } = service;
     return (
         <div className="col-lg-4 col-md-4 col-12">
-            <div className="service-card">
-                <div className="service-img">
-                    <img src={img} alt="" />
-                </div>
-                <div className="service-info p-3">
-                    <h4>{name}</h4>
-                    <p>{description}</p>
-                </div>
-                <div className="details-btn">
-                    <Link to="/services">
-                        <button className="btn btn-primary">Details</button>
+            <div className="service-card shadow-sm">
+                <div className="p-3">
+                    <div className="service-img">
+                        <img src={img} alt="" />
+                    </div>
+                    <div className="service-info pt-3">
+                        <h4>{name}</h4>
+                        <p><span className="text-warning"><strong>About <small>{name}: </small></strong></span> {description}</p>
+
+                    </div>
+                    <Link to={`/sitbooking/${id}`}>
+                        <button className="btn px-3 py-2 details">Details</button>
                     </Link>
+                    <div className="">
+
+                    </div>
                 </div>
             </div>
         </div>

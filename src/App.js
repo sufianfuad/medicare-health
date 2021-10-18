@@ -17,36 +17,54 @@ import Login from './pages/Login/Login/Login';
 import Appointment from './pages/Home/Appointment/Appointment';
 import ErrorFound from './pages/ErrorFound/ErrorFound';
 import Footer from './pages/Shared/Footer/Footer';
+import SitBooking from './pages/SitBooking/SitBooking';
+import AuthProvide from './contexts/AuthProvide';
 
 function App() {
   return (
     <div className="App">
 
-      <Router>
-        <Header></Header>
-        <Switch>
-          <Route path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path="/services">
-            <Services></Services>
-          </Route>
-          <Route path="/appointment">
-            <Appointment></Appointment>
-          </Route>
-          <Route path="/login">
-            <Login></Login>
-          </Route>
-          <Route path="*">
-            <ErrorFound></ErrorFound>
-          </Route>
+      <AuthProvide>
+        <Router>
 
-        </Switch>
-        <Footer></Footer>
-      </Router>
+          <Header></Header>
+
+          <Switch>
+
+
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+
+
+            <Route path="/services">
+              <Services></Services>
+            </Route>
+
+            <Route path="/sitbooking/:bookingId">
+              <SitBooking></SitBooking>
+            </Route>
+
+            <Route path="/appointment">
+              <Appointment></Appointment>
+            </Route>
+
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+
+            <Route exact path="*">
+              <ErrorFound></ErrorFound>
+            </Route>
+
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvide>
+
     </div>
   );
 }

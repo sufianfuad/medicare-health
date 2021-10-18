@@ -9,12 +9,16 @@ const Footer = () => {
         <div className="footer-container text-white">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-5 col">
+                    <div className="col-md-3 col">
                         <h2>Hello</h2>
+                        <h3>Our Services</h3>
 
 
 
-
+                    </div>
+                    <div className="col-md-3">
+                        <h2>Hello</h2>
+                        <h3>Contact details</h3>
 
 
 
@@ -33,7 +37,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="col-md-4 col">
+                    <div className="col-md-3 col">
                         <div className="footer-details mt-5">
                             <div className="footer-logo mb-2">
                                 <img src={footerLogo} alt="" />

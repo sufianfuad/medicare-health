@@ -1,9 +1,10 @@
 .service-card{
     height: 530px;
     margin:10px;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     border-radius: 10px;
     transition: 0.5s;
+    /* text-align: left; */
 }
 .service-card:hover{
     border: none;
@@ -16,11 +17,18 @@
 }
 .service-info{
     /* padding: 5px; */
-    text-align: center;
+    text-align: left;
 }
 .service-info p{
     text-align: left;
 }
 .details-btn{
+    
     border: 1px solid gray;
+}
+.details{
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #2382C4;
 }
