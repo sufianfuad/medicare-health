@@ -26,19 +26,19 @@ const Header = () => {
                     <Navbar.Collapse className="justify-content-end">
                         <Nav.Link
                             as={Link}
-                            to="/home#home"
+                            to="/home"
                             className="item"
                         >Home</Nav.Link>
 
                         <Nav.Link
                             as={Link}
-                            to="/home#services"
+                            to="/services"
                             className="item"
                         >Services</Nav.Link>
 
                         <Nav.Link
                             as={Link}
-                            to="/home#appointment"
+                            to="/appointment"
                             className="item"
                         >Appointment</Nav.Link>
 
@@ -55,7 +55,9 @@ const Header = () => {
                             >Login</Nav.Link>}
 
                         <Navbar.Text>
-                            Signed in as: <a href="#login">{user?.displayName}</a>
+                            {user?.email &&
+                                <span>Signed in as <a href="#login">{user?.displayName}</a></span>
+                            }
                             {/* <img src={user?.photoURL} className="profile" alt="" /> */}
                         </Navbar.Text>
                     </Navbar.Collapse>

@@ -4,25 +4,28 @@ import {
     getAuth,
     signInWithPopup,
     GoogleAuthProvider,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
     onAuthStateChanged,
     signOut
 } from "firebase/auth";
 
 authenticationInit()
 const useFirebase = () => {
-
+    // for user
     const [user, setUser] = useState();
+    //for error
+    // const [error, setError] = useState("")
+
+    //from firebase auth
     const auth = getAuth();
+    const googleProvider = new GoogleAuthProvider();
 
     const signInUsingGoogle = () => {
-        const googleProvider = new GoogleAuthProvider();
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                // console.log(result.user)
-                setUser(result.user)
-            })
+        return signInWithPopup(auth, googleProvider)
+            .catch(error => console.log(error.message))
     }
-    //observed
+    //observed user LogIn or signOut
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, user => {
             if (user) {
@@ -33,7 +36,8 @@ const useFirebase = () => {
             }
         })
         return () => unsubscribed;
-    }, [])
+    }, []);
+
     // user logout
     const logOut = () => {
         signOut(auth)

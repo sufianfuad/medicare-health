@@ -10,9 +10,8 @@
 .services-title::after{
     content: '';
     margin: 0 auto;
-    
     width: 50%;
-    height: 3px;
+    height: 1px;
     display: block;
     background-color: blue;
 }

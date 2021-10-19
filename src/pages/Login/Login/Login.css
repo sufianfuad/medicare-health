@@ -1,3 +1,11 @@
 #login{
     padding: 50px 0;
 }
+.login-form {
+    width: 80%;
+  border-radius: 10px;
+  background-color: lightgray;
+}
+.email{
+    text-align: left;
+}

@@ -19,6 +19,8 @@ import ErrorFound from './pages/ErrorFound/ErrorFound';
 import Footer from './pages/Shared/Footer/Footer';
 import SitBooking from './pages/SitBooking/SitBooking';
 import AuthProvide from './contexts/AuthProvide';
+import Register from './pages/Register/Register';
+import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -43,9 +45,9 @@ function App() {
               <Services></Services>
             </Route>
 
-            <Route path="/sitbooking/:bookingId">
+            <PrivateRoute path="/sitbooking/:bookingId">
               <SitBooking></SitBooking>
-            </Route>
+            </PrivateRoute>
 
             <Route path="/appointment">
               <Appointment></Appointment>
@@ -53,6 +55,10 @@ function App() {
 
             <Route path="/login">
               <Login></Login>
+            </Route>
+
+            <Route path="/register">
+              <Register></Register>
             </Route>
 
             <Route exact path="*">

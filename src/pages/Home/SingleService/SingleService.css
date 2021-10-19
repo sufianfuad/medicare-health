@@ -1,15 +1,10 @@
 .service-card{
     height: 530px;
     margin:10px;
-    /* border: 1px solid gray; */
-    border-radius: 10px;
-    transition: 0.5s;
-    /* text-align: left; */
-}
-.service-card:hover{
-    border: none;
+    border-radius: 15px;
     box-shadow: 3px 6px 10px lightgray ;
-    
+    transition: 0.5s;
+    background-color: #f0f0f0;
 }
 .service-img img{
     width: 100%;

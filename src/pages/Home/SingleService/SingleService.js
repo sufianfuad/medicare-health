@@ -7,7 +7,7 @@ const SingleService = ({ service }) => {
     const { id, name, img, description } = service;
     return (
         <div className="col-lg-4 col-md-4 col-12">
-            <div className="service-card shadow-sm">
+            <div className="service-card">
                 <div className="p-3">
                     <div className="service-img">
                         <img src={img} alt="" />
