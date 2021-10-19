@@ -24,7 +24,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3 col">
                         <div className="footer-menu">
                             <h4>Contact Us</h4>
                             <div className="contact-info">
