@@ -54,6 +54,13 @@ const Header = () => {
                                 className="item"
                             >Login</Nav.Link>}
 
+                        <Nav.Link
+                            as={Link}
+                            to="/register"
+                            className="item"
+                        >Register</Nav.Link>
+
+
                         <Navbar.Text>
                             {user?.email &&
                                 <span>Signed in as <a href="#login">{user?.displayName}</a></span>

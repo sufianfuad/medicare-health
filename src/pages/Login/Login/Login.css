@@ -6,6 +6,18 @@
   border-radius: 10px;
   background-color: lightgray;
 }
+.login-form h2{
+    padding-top: 10px;
+    font-size: 25px;
+    color: #132031;
+}
 .email{
     text-align: left;
+}
+.google-btn{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #162B62;
+
 }

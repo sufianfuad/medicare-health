@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 //
@@ -7,9 +7,19 @@ import loginImg from '../../../images/satisfaction/doctor-patient2.jpg'
 import './Login.css'
 
 const Login = () => {
-    const { signInUsingGoogle } = useAuth();
+    const {
+        signInUsingGoogle,
+        handleUserLogIn,
+    } = useAuth();
+
+    //for email and password
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    // for data location and history
     const location = useLocation();
-    const history = useHistory()
+    const history = useHistory();
+    //redirect
     const redirect_url = '/' || location.state;
 
     const handleGoogleLogIn = () => {
@@ -18,42 +28,46 @@ const Login = () => {
                 history.push(redirect_url)
             })
     }
-
-    const handleUsingEmail = e => {
-        console.log(e.target.value);
+    //for password
+    const handlePassword = e => {
+        setPassword(e.target.value)
     }
 
-    const handleLogIn = e => {
-        console.log('submitted')
+    // for email
+    const handleEmail = e => {
+        setEmail(e.target.value)
     }
 
-
-
-
+    //for user Login
+    const handleLogIn = () => {
+        handleUserLogIn(email, password);
+    }
 
 
     return (
         <div id="login">
-            <h2>Login Your Account</h2>
+
             <div className="container">
                 <div className="row">
                     <div className="col-lg-7 col-md-7 col-12">
                         <div className="login-form shadow-lg mt-3">
-                            <form >
-                                {/* <div>
-                                    <label htmlFor="" className="email form-label">Your Name</label>
-                                </div> */}
-                                <br />
-                                <input onSubmit={handleUsingEmail} className="p-2 w-50" type="text" placeholder="your email" />
+                            <h2>Login Your Account</h2>
+                            <form>
+                                <input
+                                    onBlur={handleEmail}
+                                    className="p-2 w-50 border rounded-3" type="text" placeholder="your email" required />
 
                                 <br />
                                 <br />
-                                <input className="p-2 w-50" type="password" />
+                                <input
+                                    onBlur={handlePassword}
+                                    className="p-2 w-50 border rounded-3" type="password" placeholder="password" required />
                                 <br />
                                 <br />
-                                <input className="btn btn-primary p-2 w-50" type="submit" value="LogIn" />
+                                <input
+                                    onClick={handleLogIn} className="btn btn-primary p-2 w-50 fw-bold" type="submit" value="LogIn" />
                             </form>
-                            <p>Fresher In MediCare?
+                            <p className="mt-5 pb-3"><strong>Fresher In MediCare?</strong>
                                 <Link to="/register">
                                     Create Account
                                 </Link></p>
@@ -70,8 +84,8 @@ const Login = () => {
             <div>
                 <button
                     onClick={handleGoogleLogIn}
-                    className="btn btn-warning"
-                >Login with Google</button>
+                    className="btn btn-warning google-btn px-3 py-2"
+                >Continue with Google</button>
             </div>
         </div>
     );

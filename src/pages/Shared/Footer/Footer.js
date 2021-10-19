@@ -10,19 +10,24 @@ const Footer = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-3 col">
-                        <h2>Hello</h2>
-                        <h3>Our Services</h3>
-
-
-
+                        <div className="footer-menu">
+                            <div>
+                                <h4>Our Services</h4>
+                                <ul>
+                                    <li><a href="/home" className="menu">Medicine</a></li>
+                                    <li><a href="/home" className="menu">Covid Unit</a></li>
+                                    <li><a href="/home" className="menu">Surgical Service</a></li>
+                                    <li><a href="/home" className="menu">Cardiology</a></li>
+                                    <li><a href="/home" className="menu">Orthopedics</a></li>
+                                    <li><a href="/home" className="menu">Neurology</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div className="col-md-3">
-                        <h2>Hello</h2>
-                        <h3>Contact details</h3>
-
-
-
-
+                        <div className="footer-menu">
+                            <h4>Contact Us</h4>
+                        </div>
 
                     </div>
                     <div className="col-md-3 col">
@@ -45,7 +50,7 @@ const Footer = () => {
                             <div>
                                 <h2 className="footer-title">MediCare</h2>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque repellendus illum harum dolores tempora ipsam temporibus unde at excepturi ut.
+                                    “ We offer unique services. Our goal is to offer you what it takes to stay healthy and independent. ”
                                 </p>
                             </div>
                             <div>

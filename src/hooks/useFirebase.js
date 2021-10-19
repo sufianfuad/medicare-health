@@ -38,16 +38,35 @@ const useFirebase = () => {
         return () => unsubscribed;
     }, []);
 
+    //for email and password
+    const handleUserRegister = (email, password) => {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                setUser(result.user);
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
+    const handleUserLogIn = (email, password) => {
+        signInWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                setUser(result.user)
+            })
+    }
+
     // user logout
     const logOut = () => {
         signOut(auth)
             .then(() => {
-
+                setUser({})
             })
     }
 
     return {
         user,
+        handleUserRegister,
+        handleUserLogIn,
         signInUsingGoogle,
         logOut
     }
