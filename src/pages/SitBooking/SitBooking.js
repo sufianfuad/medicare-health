@@ -5,48 +5,53 @@ import './SitBooking.css';
 
 
 const SitBooking = () => {
-    const [details, setDetails] = useState({})
 
     const { bookingId } = useParams();
 
+    const [details, setDetails] = useState([]);
+    const [singleDetails, setSingleDetails] = useState({})
+
+    //data load
     useEffect(() => {
         fetch('/services.json')
             .then(res => res.json())
-            // .then(details => details.filter(detail => {
-            //     return detail.id === bookingId;
-            // }))
-            .then(matched => setDetails(matched[0]))
+            .then(data => setDetails(data))
+    }, []);
 
-    }, [])
+    //call after data load
+    useEffect(() => {
+        const foundDetails = details?.find(dt => dt.id == bookingId)
+        setSingleDetails(foundDetails);
+    }, [details])
+
+
+
     return (
         <div className="booking-container">
-            <h1>{details?.name}</h1>
-            <h2>Patient Sit Booking {bookingId}</h2>
+            <div className="container">
+                <h2>Patient Sit Booking {bookingId}</h2>
+                <div className="row">
+
+                    <div className="col-md-6">
+                        <div>
+                            <img src={singleDetails?.img} alt="" />
+                        </div>
+                    </div>
+                    <div className="col-md-4">
+                        <div className="details-info p-5 shadow-sm">
+                            <h3>{singleDetails?.name}</h3>
+                            <h5>Head of <small>{singleDetails?.name}:
+                            </small> {singleDetails?.deptHead}</h5>
+                            <p>Email: {singleDetails?.email}</p>
+                            <p>{singleDetails?.description}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     );
 };
 
 export default SitBooking;
-
-// useEffect(() => {
-//     fetch("/src/data/data.json")
-//       .then((res) => res.json())
-//       .then((videos) => videos.filter((video) => {
-//         return video.id === videoID;
-//       }))
-//       .then((matched) => setVideo(matched[0]));
-//   }, []);
-
-// fetch('services.json')
-// .then(res => res.json())
-// .then(service => service.filter(details=>{
-//     return details?.id === bookingId;
-// }))
-// .then(matched => setDetails(matched[0]))
-
-// fetch('services.json')
-//             .then(res => res.json())
-//             .then(details => details.filter(detail => {
-//                 return detail.id === bookingId;
-//             }))
-//             .then(matched => setDetails(matched[0]))

@@ -1,10 +1,12 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-// import useFirebase from '../../../hooks/useFirebase';
-import useAuth from '../../../hooks/useAuth';
 
-import './Header.css'
+import useAuth from '../../../hooks/useAuth';
+//
+import menuLogo from '../../../images/logo.jpg'
+//
+import './Header.css';
 
 
 const Header = () => {
@@ -13,33 +15,43 @@ const Header = () => {
         <>
             <Navbar bg="dark" variant="dark" collapseOnSelect expand="lg" sticky="top">
                 <Container>
-                    <Navbar.Brand href="#home">MediCare</Navbar.Brand>
+                    <div className="d-flex justify-content-center align-items-center">
+                        <div className="menu-logo me-2">
+                            <img src={menuLogo} className="" alt="" />
+                        </div>
+                        <Navbar.Brand href="#home" className="title"><span className="title-color">Medi</span>Care</Navbar.Brand>
+                    </div>
+
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav.Link
                             as={Link}
                             to="/home#home"
+                            className="item"
                         >Home</Nav.Link>
 
                         <Nav.Link
                             as={Link}
                             to="/home#services"
+                            className="item"
                         >Services</Nav.Link>
 
                         <Nav.Link
                             as={Link}
                             to="/home#appointment"
+                            className="item"
                         >Appointment</Nav.Link>
 
                         {user?.email ?
 
                             <button
                                 onClick={logOut}
-                                className="btn btn-secondary">LogOut</button>
+                                className="btn btn-secondary me-2">LogOut</button>
 
                             : <Nav.Link
                                 as={Link}
                                 to="/login"
+                                className="item"
                             >Login</Nav.Link>}
 
                         <Navbar.Text>

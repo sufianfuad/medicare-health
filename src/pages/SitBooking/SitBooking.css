@@ -1,3 +1,8 @@
 .booking-container{
     padding: 50px 0;
 }
+.details-info{
+    border: 1px solid gray;
+    border-radius: 10px;
+    text-align: left;
+}

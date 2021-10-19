@@ -22,6 +22,9 @@
 .service-info p{
     text-align: left;
 }
+.text{
+    color: #132031;
+}
 .details-btn{
     
     border: 1px solid gray;
