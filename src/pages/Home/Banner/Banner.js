@@ -29,7 +29,7 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3 className="slider-title">Second slide label</h3>
+                        <h3 className="slider-title">Entrust your health our doctors</h3>
                         <p className="slider-text">Be Happy now i so simple.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -41,7 +41,7 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3 className="slider-title">Third slide label</h3>
+                        <h3 className="slider-title">Entrust your health our doctors</h3>
                         <p className="slider-text">Be attentive to your health</p>
                     </Carousel.Caption>
                 </Carousel.Item>

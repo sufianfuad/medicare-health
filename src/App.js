@@ -21,6 +21,7 @@ import SitBooking from './pages/SitBooking/SitBooking';
 import AuthProvide from './contexts/AuthProvide';
 import Register from './pages/Register/Register';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
+import About from './pages/About/About';
 
 function App() {
   return (
@@ -59,6 +60,9 @@ function App() {
 
             <Route path="/register">
               <Register></Register>
+            </Route>
+            <Route path="/about">
+              <About></About>
             </Route>
 
             <Route exact path="*">

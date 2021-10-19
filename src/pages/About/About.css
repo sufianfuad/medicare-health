@@ -1,0 +1,23 @@
+.about-container{
+    padding: 50px 0;
+}
+.about-info{
+    text-align: left;
+}
+.about-info h1{
+    font-weight: bold;
+}
+.about-info p{
+    text-align: left;
+}
+.read-btn{
+    border-radius: 30px;
+    color: #2952AE;
+    font-weight: 500;
+    background-color: #f0f0f0; 
+}
+.read-btn:hover{
+    border: 1px solid crimson;
+    color: #fff;
+    background-color: #2952AE;
+}

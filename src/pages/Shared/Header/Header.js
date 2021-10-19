@@ -60,6 +60,12 @@ const Header = () => {
                             className="item"
                         >Register</Nav.Link>
 
+                        <Nav.Link
+                            as={Link}
+                            to="/about"
+                            className="item"
+                        >About</Nav.Link>
+
 
                         <Navbar.Text>
                             {user?.email &&

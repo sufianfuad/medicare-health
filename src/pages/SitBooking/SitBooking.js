@@ -30,14 +30,14 @@ const SitBooking = () => {
         <div className="booking-container">
             <div className="container">
                 <h2>Patient Sit Booking {bookingId}</h2>
-                <div className="row">
+                <div className="row p-3">
 
-                    <div className="col-md-6">
+                    <div className="col-lg-6 col-md-6 col-sm-6">
                         <div>
                             <img src={singleDetails?.img} alt="" />
                         </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-lg-4 col-md-4 col-sm-6">
                         <div className="details-info p-5 shadow-sm">
                             <h3>{singleDetails?.name}</h3>
                             <h5>Head of <small>{singleDetails?.name}:
