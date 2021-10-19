@@ -10,7 +10,9 @@ import {
     signOut
 } from "firebase/auth";
 
+//initialize auth
 authenticationInit()
+
 const useFirebase = () => {
     // for user
     const [user, setUser] = useState();
@@ -43,6 +45,7 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 setUser(result.user);
+                console.log(result.user);
             })
             .catch(error => {
                 console.log(error.message);
@@ -51,7 +54,8 @@ const useFirebase = () => {
     const handleUserLogIn = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
-                setUser(result.user)
+                setUser(result.user);
+                console.log(result.user)
             })
     }
 

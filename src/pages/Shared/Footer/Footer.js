@@ -27,6 +27,12 @@ const Footer = () => {
                     <div className="col-md-3">
                         <div className="footer-menu">
                             <h4>Contact Us</h4>
+                            <div className="contact-info">
+                                <h6>Open 24 Hours.</h6>
+                                <p><small>We provide full time service our patient</small></p>
+                                <p>Phone: +012345657</p>
+                                <p>Email: <strong>medicare21@gmail.com</strong></p>
+                            </div>
                         </div>
 
                     </div>

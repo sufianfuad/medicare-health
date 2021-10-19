@@ -49,3 +49,6 @@ ul{
 .menu:hover{
     color: darkgray;
 }
+.contact-info{
+    text-align: left;
+}

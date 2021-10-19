@@ -33,7 +33,7 @@ const Register = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-9 col-md-9 col-12">
-                        <h2>Create <span className="title-color">Account</span></h2>
+                        <h2>Create <span className="account-color">Account</span></h2>
                         <div className="registration-form">
                             <form onSubmit={handleRegistration}>
                                 <input
