@@ -1,14 +1,17 @@
 .registration-container{
     padding: 50px 0;
-    background-color: #d3d3d3d8;
+    /* background-color: #d3d3d3d8; */
 }
-.registration-form{
-    padding-top: 30px;
-    padding-bottom: 30px;
+.form-bg{
     background-image: url(../../images/banner/vaccine.jpg);
-    background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 .account-color{
     color: #162B62;
+}
+.gl-logo{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
 }

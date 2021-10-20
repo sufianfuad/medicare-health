@@ -13,13 +13,14 @@ const Header = () => {
     const { user, logOut } = useAuth()
     return (
         <>
-            <Navbar bg="dark" variant="dark" collapseOnSelect expand="lg" sticky="top">
+            {/* bg="dark" variant="dark" */}
+            <Navbar className="navigation" collapseOnSelect expand="lg" sticky="top">
                 <Container>
                     <div className="d-flex justify-content-center align-items-center">
                         <div className="menu-logo me-2">
                             <img src={menuLogo} className="" alt="" />
                         </div>
-                        <Navbar.Brand href="#home" className="title"><span className="title-color">Medi</span>Care</Navbar.Brand>
+                        <Navbar.Brand href="#home" className="title text-white"><span className="title-color">Medi</span>Care</Navbar.Brand>
                     </div>
 
                     <Navbar.Toggle />
@@ -69,7 +70,7 @@ const Header = () => {
 
                         <Navbar.Text>
                             {user?.email &&
-                                <span>Signed in as <a href="#login">{user?.displayName}</a></span>
+                                <span className="user">Signed in as <a href="#login">{user?.displayName}</a></span>
                             }
                             {/* <img src={user?.photoURL} className="profile" alt="" /> */}
                         </Navbar.Text>

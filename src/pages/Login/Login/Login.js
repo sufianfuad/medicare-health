@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-//
-import loginBanner from '../../../images/login-banner/logo-banner.jpg'
-//
+//image
+import loginBanner from '../../../images/login-banner/logo-banner.jpg';
+import googleLogo from '../../../images/google-logo.png';
+//css file
 import './Login.css'
 
 const Login = () => {
@@ -74,13 +75,10 @@ const Login = () => {
                                             type="text" className="form-control" placeholder="password at least 6 digit" required />
                                     </div>
                                     <div>
-                                        <button type="submit" className="btn btn-brand fw-bold btn-lg logIn-btn w-100">LogIn</button>
+                                        <button
+                                            onClick={handleLogIn}
+                                            type="submit" className="btn btn-brand fw-bold btn-lg logIn-btn w-100">LogIn</button>
                                     </div>
-                                    {/* <input
-                                        onClick={handleLogIn}
-                                        className="btn btn-primary p-2 w-50 fw-bold"
-
-                                        type="submit" value="LogIn" /> */}
                                 </form>
                             </div>
                             <p className="pt-3 pb-3 text-center"><strong>Fresher In MediCare?</strong>
@@ -88,10 +86,11 @@ const Login = () => {
                                     Create Account
                                 </Link></p>
 
-                            <div className="text-center">
+                            <div className="text-center d-flex align-items-center justify-content-center">
+                                <img src={googleLogo} className="img-fluid gl-logo me-3" alt="" />
                                 <button
                                     onClick={handleGoogleLogIn}
-                                    className="btn btn-primary google-btn px-3 py-2 w-75"
+                                    className="btn btn-primary google-btn px-3 py-2 w-50"
                                 >Continue with Google</button>
                             </div>
                         </div>
@@ -100,12 +99,12 @@ const Login = () => {
                 </div>
             </div>
             <hr />
-            <div>
-                {/* <button
+            {/* <div>
+                <button
                     onClick={handleGoogleLogIn}
                     className="btn btn-warning google-btn px-3 py-2"
-                >Continue with Google</button> */}
-            </div>
+                >Continue with Google</button>
+            </div> */}
         </div>
     );
 };
