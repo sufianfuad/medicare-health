@@ -22,7 +22,6 @@ const About = () => {
                                     </Link>
                                 </div>
                             </div>
-
                         </div>
                         <div className="col-lg-7 col-md-7 col-sm-6">
                             <div className="about-img">

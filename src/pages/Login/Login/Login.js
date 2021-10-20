@@ -9,8 +9,11 @@ import './Login.css'
 
 const Login = () => {
     const {
+        user,
         signInUsingGoogle,
         handleUserLogIn,
+        handleUserRegister,
+        logOut
     } = useAuth();
 
     //for email and password
@@ -42,9 +45,10 @@ const Login = () => {
     //for user Login
     const handleLogIn = () => {
         handleUserLogIn(email, password);
-
     }
-
+    // const handleRegister = () =>{
+    //     handleUserRegister(email,password)
+    // }
 
     return (
         <div id="login">
@@ -60,14 +64,13 @@ const Login = () => {
                             <h2 className="text-center">Login Your Account</h2>
                             <div>
                                 <form className="w-75 mx-auto">
-                                    <div class="mb-3">
+                                    <div className="mb-3">
                                         <label htmlFor="formGroupExampleInput" className="form-label fw-bold">Your Email</label>
-
                                         <input
                                             onBlur={handleEmail}
                                             type="text" className="form-control" placeholder="enter your email" required />
                                     </div>
-                                    <div class="mb-3">
+                                    <div className="mb-3">
                                         <label htmlFor="formGroupExampleInput" className="form-label fw-bold">Your Password</label>
 
                                         <input
@@ -75,9 +78,15 @@ const Login = () => {
                                             type="text" className="form-control" placeholder="password at least 6 digit" required />
                                     </div>
                                     <div>
-                                        <button
-                                            onClick={handleLogIn}
-                                            type="submit" className="btn btn-brand fw-bold btn-lg logIn-btn w-100">LogIn</button>
+                                        {user?.email ?
+                                            <button
+                                                onClick={logOut}
+                                                type="submit" className="btn btn-brand fw-bold btn-lg logIn-btn w-100">LogOut</button>
+                                            :
+                                            <button
+                                                onClick={handleLogIn}
+                                                type="submit" className="btn btn-brand fw-bold btn-lg logIn-btn w-100">LogIn</button>
+                                        }
                                     </div>
                                 </form>
                             </div>

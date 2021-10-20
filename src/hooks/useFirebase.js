@@ -17,7 +17,7 @@ const useFirebase = () => {
     // for user
     const [user, setUser] = useState();
     //for error
-    // const [error, setError] = useState("")
+    const [error, setError] = useState("")
 
     //from firebase auth
     const auth = getAuth();
@@ -25,8 +25,10 @@ const useFirebase = () => {
 
     const signInUsingGoogle = () => {
         return signInWithPopup(auth, googleProvider)
-            .catch(error => console.log(error.message))
+            .catch(error => setError(error.message))
     }
+
+
     //observed user LogIn or signOut
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, user => {
@@ -48,7 +50,7 @@ const useFirebase = () => {
                 console.log(result.user);
             })
             .catch(error => {
-                console.log(error.message);
+                setError(error.message);
             })
     }
     const handleUserLogIn = (email, password) => {

@@ -1,0 +1,40 @@
+[debug] [2021-10-20T13:34:09.981Z] ----------------------------------------------------------------------
+[debug] [2021-10-20T13:34:09.986Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ABU SUFIAN FUAD\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-10-20T13:34:09.987Z] CLI Version:   9.20.0
+[debug] [2021-10-20T13:34:09.987Z] Platform:      win32
+[debug] [2021-10-20T13:34:09.988Z] Node Version:  v14.17.1
+[debug] [2021-10-20T13:34:09.990Z] Time:          Wed Oct 20 2021 19:34:09 GMT+0600 (Bangladesh Standard Time)
+[debug] [2021-10-20T13:34:09.990Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-10-20T13:34:10.120Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-10-20T13:34:10.121Z] > authorizing via signed-in user (sufianfuad2611@gmail.com)
+[debug] [2021-10-20T13:34:10.121Z] [iam] checking project medi-care-hospital-da6af for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-10-20T13:34:10.124Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-10-20T13:34:10.124Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-10-20T13:34:10.625Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Wed, 20 Oct 2021 13:33:21 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-10-20T13:34:10.657Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/medi-care-hospital-da6af:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-10-20T13:34:31.746Z] [iam] error while checking permissions, command may fail: FirebaseError: Server Error. connect ETIMEDOUT 142.250.77.170:443
+[debug] [2021-10-20T13:34:31.751Z] > refreshing access token with scopes: []
+[debug] [2021-10-20T13:34:31.752Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-10-20T13:34:52.804Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-10-20T13:34:55.195Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (C:\Users\ABU SUFIAN FUAD\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:141:12)
+    at refreshTokens (C:\Users\ABU SUFIAN FUAD\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:448:15)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Client.getAccessToken (C:\Users\ABU SUFIAN FUAD\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:144:23)
+    at async Client.addAuthHeader (C:\Users\ABU SUFIAN FUAD\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:135:21)
+    at async Client.request (C:\Users\ABU SUFIAN FUAD\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:93:34)
+    at async Object.getFirebaseProject (C:\Users\ABU SUFIAN FUAD\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:290:21)
+    at async Object.getDefaultHostingSite (C:\Users\ABU SUFIAN FUAD\AppData\Roaming\npm\node_modules\firebase-tools\lib\getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (C:\Users\ABU SUFIAN FUAD\AppData\Roaming\npm\node_modules\firebase-tools\lib\requireHostingSite.js:9:18)
+    at async Object.fn (C:\Users\ABU SUFIAN FUAD\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\deploy.js:65:9)
+    at async C:\Users\ABU SUFIAN FUAD\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:188:17
+[error] 
+[error] Error: Failed to get Firebase project medi-care-hospital-da6af. Please make sure the project exists and your account has permission to access it.
