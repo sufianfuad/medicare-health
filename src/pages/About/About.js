@@ -31,7 +31,11 @@ const About = () => {
                     </div>
                     {/* patient review  */}
                     <div className="row p-5 mt-5">
-                        <h2 className="text-center pb-3">Patient Review</h2>
+                        <div className="text-center pb-3">
+                            <div className="services-title">
+                                <h2>Patient Review</h2>
+                            </div>
+                        </div>
                         <div className="col-md-3 col-sm-3">
                             <div className="patient-review">
                                 <div className="patient-text">

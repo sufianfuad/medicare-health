@@ -29,7 +29,7 @@ function App() {
 
       <AuthProvide>
         <Router>
-
+          {/* Header route  */}
           <Header></Header>
 
           <Switch>
@@ -70,6 +70,7 @@ function App() {
             </Route>
 
           </Switch>
+          {/* footer route */}
           <Footer></Footer>
         </Router>
       </AuthProvide>

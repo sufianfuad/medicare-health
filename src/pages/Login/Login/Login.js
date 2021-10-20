@@ -78,15 +78,9 @@ const Login = () => {
                                             type="text" className="form-control" placeholder="password at least 6 digit" required />
                                     </div>
                                     <div>
-                                        {user?.email ?
-                                            <button
-                                                onClick={logOut}
-                                                type="submit" className="btn btn-brand fw-bold btn-lg logIn-btn w-100">LogOut</button>
-                                            :
-                                            <button
-                                                onClick={handleLogIn}
-                                                type="submit" className="btn btn-brand fw-bold btn-lg logIn-btn w-100">LogIn</button>
-                                        }
+                                        <button
+                                            onClick={handleLogIn}
+                                            type="submit" className="btn btn-brand fw-bold btn-lg logIn-btn w-100">LogIn</button>
                                     </div>
                                 </form>
                             </div>
@@ -107,13 +101,6 @@ const Login = () => {
 
                 </div>
             </div>
-            <hr />
-            {/* <div>
-                <button
-                    onClick={handleGoogleLogIn}
-                    className="btn btn-warning google-btn px-3 py-2"
-                >Continue with Google</button>
-            </div> */}
         </div>
     );
 };
