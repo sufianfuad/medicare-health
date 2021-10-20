@@ -12,7 +12,7 @@ const Appointment = () => {
         <div className="appointment">
             <div className="container">
                 <div>
-                    <h2>Welcome to Appointment</h2>
+                    <h2 className="text-center fw-bold">Welcome to Appointment</h2>
                     <div className="row p-5">
                         <div className="col-lg-3 col-md-3 col-sm-6">
                             <div className="demo p-3">
@@ -21,8 +21,11 @@ const Appointment = () => {
                                 </div>
                                 <div className="info">
                                     <h3>Dr Mahmudur Rocky</h3>
+                                    <div>
+                                        <button className="btn btn-success px-3 py-2"> Appointment</button>
+                                    </div>
                                 </div>
-                                <button className="btn btn-success px-3 py-2"> Appointment</button>
+
                             </div>
 
                         </div>

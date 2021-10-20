@@ -9,11 +9,8 @@ import './Login.css'
 
 const Login = () => {
     const {
-        user,
         signInUsingGoogle,
         handleUserLogIn,
-        handleUserRegister,
-        logOut
     } = useAuth();
 
     //for email and password
@@ -29,7 +26,7 @@ const Login = () => {
     const handleGoogleLogIn = () => {
         signInUsingGoogle()
             .then(result => {
-                history.push(redirect_url)
+                history.push(redirect_url);
             })
     }
     //for password
