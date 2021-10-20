@@ -25,7 +25,7 @@ import About from './pages/About/About';
 
 function App() {
   return (
-    <div className="App">
+    <div>
 
       <AuthProvide>
         <Router>
@@ -50,9 +50,9 @@ function App() {
               <SitBooking></SitBooking>
             </PrivateRoute>
 
-            <Route path="/appointment">
+            <PrivateRoute path="/appointment">
               <Appointment></Appointment>
-            </Route>
+            </PrivateRoute>
 
             <Route path="/login">
               <Login></Login>

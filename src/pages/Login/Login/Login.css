@@ -2,14 +2,32 @@
     padding: 50px 0;
 }
 .login-form {
-    width: 80%;
+  width: 100%;
+  height: 500px;
   border-radius: 10px;
-  background-color: lightgray;
+  box-shadow: 4px 6px 10px gray;
+  /* transition: 0.3s; */
 }
+/* .login-form:hover{
+    background-color: #7C83FD;
+} */
 .login-form h2{
     padding-top: 10px;
-    font-size: 25px;
-    color: #132031;
+    font-size: 30px;
+    font-weight: bold;
+    /* color: #224596; */
+    color:#2382C4;
+}
+.login-banner {
+    width: 100%;
+}
+.logIn-btn{
+    color: #fff;
+    border-radius: 5px;
+    background-color: #224596;
+}
+.logIn-btn:hover{
+    background-color: rgba(82, 121, 219, 0.835);
 }
 .email{
     text-align: left;
@@ -18,6 +36,7 @@
     color: #fff;
     font-size: 18px;
     font-weight: 500;
-    background-color: #162B62;
+    /* background-color: rgba(82, 121, 219, 0.835); */
+    background-color: #1c44a8;
 
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 //
-import loginImg from '../../../images/satisfaction/doctor-patient2.jpg'
+import loginBanner from '../../../images/login-banner/logo-banner.jpg'
 //
 import './Login.css'
 
@@ -47,46 +47,64 @@ const Login = () => {
 
     return (
         <div id="login">
-
             <div className="container">
-                <div className="row">
-                    <div className="col-lg-7 col-md-7 col-12">
-                        <div className="login-form shadow-lg mt-3">
-                            <h2>Login Your Account</h2>
-                            <form>
-                                <input
-                                    onBlur={handleEmail}
-                                    className="p-2 w-50 border rounded-3" type="text" placeholder="your email" required />
+                <div className="row d-flex align-items-center">
+                    <div className="col-lg-6 col-md-6 col-12">
+                        <div className="login-banner">
+                            <img className="img-fluid" src={loginBanner} alt="" />
+                        </div>
+                    </div>
+                    <div className="col-lg-6 col-md-6 col-12">
+                        <div className="login-form mt-3">
+                            <h2 className="text-center">Login Your Account</h2>
+                            <div>
+                                <form className="w-75 mx-auto">
+                                    <div class="mb-3">
+                                        <label htmlFor="formGroupExampleInput" className="form-label fw-bold">Your Email</label>
 
-                                <br />
-                                <br />
-                                <input
-                                    onBlur={handlePassword}
-                                    className="p-2 w-50 border rounded-3" type="password" placeholder="password" required />
-                                <br />
-                                <br />
-                                <input
-                                    onClick={handleLogIn} className="btn btn-primary p-2 w-50 fw-bold" type="submit" value="LogIn" />
-                            </form>
-                            <p className="mt-5 pb-3"><strong>Fresher In MediCare?</strong>
+                                        <input
+                                            onBlur={handleEmail}
+                                            type="text" className="form-control" placeholder="enter your email" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label htmlFor="formGroupExampleInput" className="form-label fw-bold">Your Password</label>
+
+                                        <input
+                                            onBlur={handlePassword}
+                                            type="text" className="form-control" placeholder="password at least 6 digit" required />
+                                    </div>
+                                    <div>
+                                        <button type="submit" className="btn btn-brand fw-bold btn-lg logIn-btn w-100">LogIn</button>
+                                    </div>
+                                    {/* <input
+                                        onClick={handleLogIn}
+                                        className="btn btn-primary p-2 w-50 fw-bold"
+
+                                        type="submit" value="LogIn" /> */}
+                                </form>
+                            </div>
+                            <p className="pt-3 pb-3 text-center"><strong>Fresher In MediCare?</strong>
                                 <Link to="/register">
                                     Create Account
                                 </Link></p>
+
+                            <div className="text-center">
+                                <button
+                                    onClick={handleGoogleLogIn}
+                                    className="btn btn-primary google-btn px-3 py-2 w-75"
+                                >Continue with Google</button>
+                            </div>
                         </div>
                     </div>
-                    <div className="col-lg-5 col-md-5 col-12">
-                        <div>
-                            <img className="img-fluid" src={loginImg} alt="" />
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <hr />
             <div>
-                <button
+                {/* <button
                     onClick={handleGoogleLogIn}
                     className="btn btn-warning google-btn px-3 py-2"
-                >Continue with Google</button>
+                >Continue with Google</button> */}
             </div>
         </div>
     );
