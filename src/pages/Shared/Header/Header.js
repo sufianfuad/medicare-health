@@ -66,8 +66,6 @@ const Header = () => {
                             to="/about"
                             className="item"
                         >About</Nav.Link>
-
-
                         <Navbar.Text>
                             {user?.email &&
                                 <span className="user">Signed in as <a href="#login">{user?.displayName}</a></span>

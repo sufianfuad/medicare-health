@@ -10,7 +10,7 @@ const SitBooking = () => {
     const { bookingId } = useParams();
 
     const [details, setDetails] = useState([]);
-    const [singleDetails, setSingleDetails] = useState({})
+    const [singleDetails, setSingleDetails] = useState({});
 
     //data load
     useEffect(() => {
@@ -24,8 +24,6 @@ const SitBooking = () => {
         const foundDetails = details?.find(dt => dt.id == bookingId)
         setSingleDetails(foundDetails);
     }, [details])
-
-
 
     return (
         <div className="booking-container">
