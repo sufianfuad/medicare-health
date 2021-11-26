@@ -15,7 +15,7 @@ const About = () => {
                             {/* about details  */}
                             <div className="about-info">
                                 <h2 className="animate__animated animate__heartBeat fw-bold">Medical Services That You Can Trust.</h2>
-                                <p>We offer unique services. Our goal is to offer you what it takes to stay healthy and independent.</p>
+                                <p>We Offer unique services. Our goal is to offer you what it takes to stay healthy and independent.</p>
                                 <div>
                                     <Link to="/appointment">
                                         <button className="btn read-btn px-3 py-2 shadow-sm">Read More</button>
