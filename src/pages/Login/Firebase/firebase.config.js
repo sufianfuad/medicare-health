@@ -1,11 +1,11 @@
 // import web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDsGkqlgYNFp7LqDTeU4IeTStdS-6Ds830",
-    authDomain: "medi-care-hospital-da6af.firebaseapp.com",
-    projectId: "medi-care-hospital-da6af",
-    storageBucket: "medi-care-hospital-da6af.appspot.com",
-    messagingSenderId: "410563582386",
-    appId: "1:410563582386:web:f663099a23ddbceac62cab"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID,
 };
 
 export default firebaseConfig;

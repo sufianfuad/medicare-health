@@ -14,7 +14,7 @@ const SitBooking = () => {
 
     //data load
     useEffect(() => {
-        fetch('/services.json')
+        fetch('http://localhost:7000/treatments')
             .then(res => res.json())
             .then(data => setDetails(data))
     }, []);

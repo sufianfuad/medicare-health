@@ -18,19 +18,20 @@ import Appointment from './pages/Home/Appointment/Appointment';
 import ErrorFound from './pages/ErrorFound/ErrorFound';
 import Footer from './pages/Shared/Footer/Footer';
 import SitBooking from './pages/SitBooking/SitBooking';
-import AuthProvide from './contexts/AuthProvide';
+import AuthProvider from './contexts/AuthProvider';
 import Register from './pages/Register/Register';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import About from './pages/About/About';
+import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
     <div>
 
-      <AuthProvide>
+      <AuthProvider>
         <Router>
           {/* Header route  */}
-          <Header></Header>
+          {/* <Header></Header> */}
 
           <Switch>
 
@@ -54,13 +55,19 @@ function App() {
               <Appointment></Appointment>
             </PrivateRoute>
 
-            <Route path="/login">
-              <Login></Login>
-            </Route>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
 
             <Route path="/register">
               <Register></Register>
             </Route>
+
+
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+
             <Route path="/about">
               <About></About>
             </Route>
@@ -71,9 +78,9 @@ function App() {
 
           </Switch>
           {/* footer route */}
-          <Footer></Footer>
+          {/* <Footer></Footer> */}
         </Router>
-      </AuthProvide>
+      </AuthProvider>
 
     </div>
   );

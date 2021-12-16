@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -10,7 +11,7 @@ import './Header.css';
 
 
 const Header = () => {
-    const { user, logOut } = useAuth()
+    const { user, logOut } = useAuth();
     return (
         <>
             {/* bg="dark" variant="dark" */}
@@ -43,17 +44,16 @@ const Header = () => {
                             className="item"
                         >Appointment</Nav.Link>
 
-                        {user?.email ?
-
-                            <button
-                                onClick={logOut}
-                                className="btn btn-secondary me-2">LogOut</button>
-
-                            : <Nav.Link
+                        {
+                            user?.email &&
+                            <Nav.Link
                                 as={Link}
-                                to="/login"
+                                to="/dashboard"
                                 className="item"
-                            >Login</Nav.Link>}
+                            >Dashboard
+                            </Nav.Link>
+
+                        }
 
                         <Nav.Link
                             as={Link}
@@ -66,6 +66,20 @@ const Header = () => {
                             to="/about"
                             className="item"
                         >About</Nav.Link>
+
+                        {user?.email ?
+
+                            <button
+                                onClick={logOut}
+                                className="btn btn-secondary me-2">LogOut</button>
+
+
+                            : <Nav.Link
+                                as={Link}
+                                to="/login"
+                                className="item"
+                            >Login</Nav.Link>}
+
                         <Navbar.Text>
                             {user?.email &&
                                 <span className="user">Signed in as <a href="#login">{user?.displayName}</a></span>

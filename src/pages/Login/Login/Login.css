@@ -32,11 +32,44 @@
 .email{
     text-align: left;
 }
-.google-btn{
+/* .google-btn{
     color: #fff;
     font-size: 18px;
     font-weight: 500;
-    /* background-color: rgba(82, 121, 219, 0.835); */
+    background-color: rgba(82, 121, 219, 0.835);
     background-color: #1c44a8;
-
+} */
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+  }
+.login-text{
+    color: #181D31;
+    font-weight: bold;
+}
+.sign-btn {
+    background-color: #1c44a8;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+    border: none;
+    max-width: 300px;
+    width: 100%;
+    margin: 10px auto;
+    padding: 1px;
+  }
+.sign-text{
+  margin: auto;
+}
+.g-logo-holder {
+  background-color: white;
+  padding: 5px;
+}
+.g-logo-holder img {
+  width: 30px;
 }

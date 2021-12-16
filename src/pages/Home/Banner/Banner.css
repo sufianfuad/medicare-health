@@ -1,3 +1,6 @@
+.carousel-img img{
+    max-height: 644px;
+}
 .slider-title{
     color: #132031;
     font-size: 25px;

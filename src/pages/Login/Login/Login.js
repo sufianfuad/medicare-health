@@ -2,103 +2,137 @@ import React, { useState } from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 //image
-import loginBanner from '../../../images/login-banner/logo-banner.jpg';
-import googleLogo from '../../../images/google-logo.png';
+import loginBanner from '../../../images/login-banner/loginBanner.jpg';
+import GoogleLogo from '../../../images/google-logo.png';
 //css file
-import './Login.css'
+import './Login.css';
+import { Alert, Spinner } from 'react-bootstrap';
+import Header from '../../Shared/Header/Header';
+import Footer from '../../Shared/Footer/Footer';
 
 const Login = () => {
-    const {
-        signInUsingGoogle,
-        handleUserLogIn,
-    } = useAuth();
+    const [loginData, setLoginData] = useState({});
 
-    //for email and password
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+    const { user, loginUser, signInUsingGoogle, isLoading, authError } = useAuth();
 
-    // for data location and history
     const location = useLocation();
     const history = useHistory();
-    //redirect
-    const redirect_url = '/' || location.state;
+
+    const handleOnChange = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = { ...loginData }
+        newLoginData[field] = value;
+        setLoginData(newLoginData);
+        console.log(newLoginData, field, value);
+    }
+
+    const handleLogInSubmit = e => {
+        loginUser(loginData.email, loginData.password, location, history);
+        e.preventDefault();
+    }
 
     const handleGoogleLogIn = () => {
-        signInUsingGoogle()
-            .then(result => {
-                history.push(redirect_url);
-            })
+        signInUsingGoogle(location, history)
     }
-    //for password
-    const handlePassword = e => {
-        setPassword(e.target.value)
-    }
-
-    // for email
-    const handleEmail = e => {
-        setEmail(e.target.value)
-    }
-
-    //for user Login
-    const handleLogIn = () => {
-        handleUserLogIn(email, password);
-    }
-    // const handleRegister = () =>{
-    //     handleUserRegister(email,password)
-    // }
 
     return (
-        <div id="login">
-            <div className="container">
-                <div className="row d-flex align-items-center">
-                    <div className="col-lg-6 col-md-6 col-12">
-                        <div className="login-banner">
-                            <img className="img-fluid" src={loginBanner} alt="" />
-                        </div>
-                    </div>
-                    <div className="col-lg-6 col-md-6 col-12">
-                        <div className="login-form mt-3">
-                            <h2 className="text-center">Login Your Account</h2>
-                            <div>
-                                <form className="w-75 mx-auto">
-                                    <div className="mb-3">
-                                        <label htmlFor="formGroupExampleInput" className="form-label fw-bold">Your Email</label>
-                                        <input
-                                            onBlur={handleEmail}
-                                            type="text" className="form-control" placeholder="enter your email" required />
-                                    </div>
-                                    <div className="mb-3">
-                                        <label htmlFor="formGroupExampleInput" className="form-label fw-bold">Your Password</label>
+        <>
+            <Header></Header>
+            <section id="login">
 
-                                        <input
-                                            onBlur={handlePassword}
-                                            type="text" className="form-control" placeholder="password at least 6 digit" required />
-                                    </div>
-                                    <div>
+                <div className="container">
+                    <div className="row d-flex align-items-center">
+                        <div className="col-lg-6 col-md-6 col-12">
+                            <div className="login-banner">
+                                <img className="img-fluid" src={loginBanner} alt="" />
+                            </div>
+                        </div>
+                        <div className="col-lg-6 col-md-6 col-12">
+                            <div className="login-form mt-3">
+                                <h2 className="text-center">Login Your Account</h2>
+                                <div>
+                                    {/* ================================== */}
+                                    <form onSubmit={handleLogInSubmit}
+                                        className="w-75 mx-auto">
+                                        <div class="mb-3">
+                                            <label htmlFor="exampleInputEmail1" className="form-label fw-bold">Email address</label>
+                                            <input
+                                                name="email"
+                                                onBlur={handleOnChange}
+                                                // onBlur={handleOnChange}
+                                                className="form-control"
+                                                placeholder="Enter your email"
+                                                required
+                                            />
+                                        </div>
+                                        <div className="mb-3">
+                                            <label htmlFor="formGroupExampleInput" className="form-label fw-bold">Your Password
+                                            </label>
+                                            <input
+                                                type="password"
+                                                name="password"
+                                                onBlur={handleOnChange}
+                                                // onBlur={handleOnChange}
+                                                className="form-control"
+                                                placeholder="password at least 6 digit"
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <button
+                                                // onClick={handleLogIn}
+                                                type="submit"
+                                                className="btn btn-brand fw-bold btn-lg logIn-btn w-100">Login</button>
+                                        </div>
+                                        <Link
+                                            to="/register"
+                                        >
+                                            <a href="#">New In MediCare? Create Account</a>
+                                        </Link>
+                                    </form>
+                                    {
+                                        isLoading && <div className="text-center">
+                                            <Spinner animation="border" />
+                                        </div>
+                                    }
+                                    {
+                                        user?.email && <div class="alert alert-success" role="alert">
+                                            Successfully Login
+                                        </div>
+                                    }
+                                    {
+                                        authError && <Alert variant="danger">
+                                            {authError}
+                                        </Alert>
+                                    }
+                                </div>
+                                {/* ============== */}
+                                <p className="text-center py-3">---------------------</p>
+                                <div className="login">
+                                    <div className="container text-center mt-2">
                                         <button
-                                            onClick={handleLogIn}
-                                            type="submit" className="btn btn-brand fw-bold btn-lg logIn-btn w-100">LogIn</button>
+                                            // onClick={handleGoogleLogin}
+                                            onClick={handleGoogleLogIn}
+                                            className="btn sign-btn"
+                                        >
+                                            <div className="g-logo-holder">
+                                                <img
+                                                    src={GoogleLogo}
+                                                    alt="Google" />
+                                            </div>
+                                            <div className="sign-text">Sign in with Google</div>
+                                        </button>
                                     </div>
-                                </form>
-                            </div>
-                            <p className="pt-3 pb-3 text-center"><strong>Fresher In MediCare?</strong>
-                                <Link to="/register">
-                                    Create Account
-                                </Link></p>
-
-                            <div className="text-center d-flex align-items-center justify-content-center">
-                                <img src={googleLogo} className="img-fluid gl-logo me-3" alt="" />
-                                <button
-                                    onClick={handleGoogleLogIn}
-                                    className="btn btn-primary google-btn px-3 py-2 w-50"
-                                >Continue with Google</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
-            </div>
-        </div>
+            </section>
+            <Footer></Footer>
+        </>
     );
 };
 
