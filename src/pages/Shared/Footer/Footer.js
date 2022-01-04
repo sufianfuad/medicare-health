@@ -64,6 +64,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
+                    <hr />
                 </div>
                 <p className="text-center">Copyright &copy; All Right Reserved, 2021</p>
             </div>

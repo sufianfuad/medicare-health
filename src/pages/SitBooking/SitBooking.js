@@ -49,6 +49,11 @@ const SitBooking = () => {
                             </Link>
                         </div>
                     </div>
+                    <Link to="/home">
+                        <div className='back-home'>
+                            Home
+                        </div>
+                    </Link>
                 </div>
             </div>
 

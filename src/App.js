@@ -11,18 +11,20 @@ import {
 } from 'react-router-dom';
 //import components
 import Home from './pages/Home/Home/Home';
-import Header from './pages/Shared/Header/Header';
+// import Header from './pages/Shared/Header/Header';
 import Services from './pages/Home/Services/Services';
 import Login from './pages/Login/Login/Login';
 import Appointment from './pages/Home/Appointment/Appointment';
 import ErrorFound from './pages/ErrorFound/ErrorFound';
-import Footer from './pages/Shared/Footer/Footer';
+// import Footer from './pages/Shared/Footer/Footer';
 import SitBooking from './pages/SitBooking/SitBooking';
 import AuthProvider from './contexts/AuthProvider';
 import Register from './pages/Register/Register';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import About from './pages/About/About';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import AddTreatments from './pages/AddTreatments/AddTreatments';
+import Payment from './pages/Payment/Payment';
 
 function App() {
   return (
@@ -53,6 +55,14 @@ function App() {
 
             <PrivateRoute path="/appointment">
               <Appointment></Appointment>
+            </PrivateRoute>
+
+            <PrivateRoute path="/addTreatments">
+              <AddTreatments></AddTreatments>
+            </PrivateRoute>
+
+            <PrivateRoute path="/payment">
+              <Payment></Payment>
             </PrivateRoute>
 
             <PrivateRoute path="/dashboard">

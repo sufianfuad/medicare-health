@@ -1,161 +1,145 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import React from 'react';
+//react font awesome import
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-const drawerWidth = 240;
+import './Dashboard.css';
 
-function Dashboard(props) {
-    const { window } = props;
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import Appointments from '../Appointments/Appointments';
+import Payment from '../../Payment/Payment';
+import MyOrders from '../MyOrders/MyOrders';
+import Reviews from '../../Reviews/Reviews';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import AddTreatments from '../../AddTreatments/AddTreatments';
+import ManageAllOrder from '../ManageAllOrder/ManageAllOrder';
+import ManageTreatments from '../ManageTreatments/ManageTreatments';
+import Header from '../../Shared/Header/Header';
+import AddDoctor from '../AddDoctor/AddDoctor';
+import Footer from '../../Shared/Footer/Footer';
 
-    const handleDrawerToggle = () => {
-        setMobileOpen(!mobileOpen);
-    };
+// import
+import {
+    Switch,
+    Route,
+    Link,
+    useRouteMatch
+} from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
-    const drawer = (
+const Dashboard = () => {
+    //For Nesting
+    const { path, url } = useRouteMatch();
+
+    const { user, admin, logOut } = useAuth();
+    // react font awesome
+    const dashIcon = <FontAwesomeIcon icon={faBars} />
+    return (
         <div>
-            <Toolbar />
-            <Divider />
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
+            <Header />
+            <div className="dashboard-container">
+                <div className="row container">
+                    <div className="col-md-3 col-lg-3 col-sm-12">
+                        <div className="dashboard">
+                            <h4 className="pt-5 fw-bold"><span className="dashIcon me-2 px-1">{dashIcon}</span>Dashboard</h4>
+                            <div className="dash-btn-holder">
+                                <Link to="/">
+                                    <button className="btn-visit-front">Visit Site</button>
+                                </Link>
+                            </div>
+                            <div className="logged-user pt-2">
+                                <p>Welcome! {user?.displayName}</p>
+                            </div>
+                            {
+                                !admin && <div>
+                                    <Link to={`${url}/appointment`}>
+                                        <li className="dashboard-menu mt-3">Appointment</li>
+                                    </Link>
+
+                                    <Link to={`${url}/payment`}>
+                                        <li className="dashboard-menu
+                                         mt-3">Payment</li>
+                                    </Link>
+
+                                    <Link to={`${url}/addTreatments`}>
+                                        <li className="dashboard-menu mt-3">Add a Treatment</li>
+                                    </Link>
+
+                                    <Link to={`${url}/myOrders`}>
+                                        <li className="dashboard-menu mt-3">My Sit Order</li>
+                                    </Link>
+
+                                    <Link to={`${url}/review`}>
+                                        <li className="dashboard-menu mt-3">Review</li>
+                                    </Link>
+                                </div>
+                            }
+                            {
+                                admin && <div>
+                                    <Link to={`${url}/makeAdmin`}>
+                                        <li className="dashboard-menu mt-3">Make Admin</li>
+                                    </Link>
+
+                                    <Link to={`${url}/addDoctor`}>
+                                        <li className="dashboard-menu mt-3">Add Doctor</li>
+                                    </Link>
+
+                                    <Link to={`${url}/manageTreatment`}>
+                                        <li className="dashboard-menu mt-3">Manage Treatments</li>
+                                    </Link>
+
+                                    <Link to={`${url}/manageOrders`}>
+                                        <li className="dashboard-menu mt-3">Manage all Order</li>
+                                    </Link>
+                                </div>
+                            }
+                            <Link to={`${url}/logout`}>
+                                <li
+                                    onClick={logOut}
+                                    className="dashboard-menu mt-3">Logout</li>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="col-lg-9 col-md-9 col-sm-12">
+                        <Switch>
+                            <Route exact path={`${path}/appointment`}>
+                                <Appointments></Appointments>
+                            </Route>
+                            <Route exact path={`${path}/payment`}>
+                                <Payment></Payment>
+                            </Route>
+                            <Route exact path={`${path}/myOrders`}>
+                                <MyOrders></MyOrders>
+                            </Route>
+                            <Route exact path={`${path}/review`}>
+                                <Reviews></Reviews>
+                            </Route>
+                            <AdminRoute exact path={`${path}/makeAdmin`}>
+                                <MakeAdmin></MakeAdmin>
+                            </AdminRoute>
+
+                            <AdminRoute exact path={`${path}/addDoctor`}>
+                                <AddDoctor></AddDoctor>
+                            </AdminRoute>
+                            <AdminRoute exact path={`${path}/addTreatments`}>
+                                <AddTreatments></AddTreatments>
+                            </AdminRoute>
+
+                            <AdminRoute exact path={`${path}/manageTreatments`}>
+                                <ManageTreatments></ManageTreatments>
+                            </AdminRoute>
+
+                            <AdminRoute exact path={`${path}/manageOrders`}>
+                                <ManageAllOrder></ManageAllOrder>
+                            </AdminRoute>
+
+                        </Switch>
+                    </div>
+                </div>
+            </div>
+            <Footer></Footer>
         </div>
     );
-
-    const container = window !== undefined ? () => window().document.body : undefined;
-
-    return (
-        <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-            <AppBar
-                position="fixed"
-                sx={{
-                    width: { sm: `calc(100% - ${drawerWidth}px)` },
-                    ml: { sm: `${drawerWidth}px` },
-                }}
-            >
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' } }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        Responsive drawer
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-            <Box
-                component="nav"
-                sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-                aria-label="mailbox folders"
-            >
-                {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-                <Drawer
-                    container={container}
-                    variant="temporary"
-                    open={mobileOpen}
-                    onClose={handleDrawerToggle}
-                    ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
-                    }}
-                    sx={{
-                        display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                    }}
-                >
-                    {drawer}
-                </Drawer>
-                <Drawer
-                    variant="permanent"
-                    sx={{
-                        display: { xs: 'none', sm: 'block' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                    }}
-                    open
-                >
-                    {drawer}
-                </Drawer>
-            </Box>
-            <Box
-                component="main"
-                sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
-            >
-                <Toolbar />
-                <Typography paragraph>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-                    enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-                    imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-                    Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-                    Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                    adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-                    nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-                    leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-                    feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-                    consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-                    sapien faucibus et molestie ac.
-                </Typography>
-                <Typography paragraph>
-                    Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-                    eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-                    neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-                    tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-                    sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-                    tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-                    gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-                    et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-                    tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-                    eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-                    posuere sollicitudin aliquam ultrices sagittis orci a.
-                </Typography>
-            </Box>
-        </Box>
-    );
-}
-
-Dashboard.propTypes = {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
-    window: PropTypes.func,
 };
 
 export default Dashboard;

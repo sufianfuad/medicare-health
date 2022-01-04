@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 //image
-import loginBanner from '../../../images/login-banner/loginBanner.jpg';
+import loginBanner from '../../../images/login.png';
 import GoogleLogo from '../../../images/google-logo.png';
 //css file
 import './Login.css';
@@ -40,14 +40,8 @@ const Login = () => {
         <>
             <Header></Header>
             <section id="login">
-
                 <div className="container">
                     <div className="row d-flex align-items-center">
-                        <div className="col-lg-6 col-md-6 col-12">
-                            <div className="login-banner">
-                                <img className="img-fluid" src={loginBanner} alt="" />
-                            </div>
-                        </div>
                         <div className="col-lg-6 col-md-6 col-12">
                             <div className="login-form mt-3">
                                 <h2 className="text-center">Login Your Account</h2>
@@ -97,7 +91,7 @@ const Login = () => {
                                         </div>
                                     }
                                     {
-                                        user?.email && <div class="alert alert-success" role="alert">
+                                        user?.email && <div className="alert alert-success" role="alert">
                                             Successfully Login
                                         </div>
                                     }
@@ -127,7 +121,11 @@ const Login = () => {
                                 </div>
                             </div>
                         </div>
-
+                        <div className="col-lg-6 col-md-6 col-12">
+                            <div className="login-banner">
+                                <img className="img-fluid" src={loginBanner} alt="" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

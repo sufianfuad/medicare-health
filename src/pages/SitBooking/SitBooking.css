@@ -1,5 +1,6 @@
 .booking-container{
     padding: 50px 0;
+    background-color: #F3F5F9;
 }
 .body{
     height: 600px;
@@ -19,4 +20,14 @@
     color: #fff;
     border-radius: 10px;
     text-align: left;
+}
+.back-home{
+    background-color: #2952AE;
+    color: #F3F5F9;
+    padding: 6px 16px;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    text-decoration: none;
+    text-transform: uppercase;
 }

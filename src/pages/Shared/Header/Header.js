@@ -54,6 +54,16 @@ const Header = () => {
                             </Nav.Link>
 
                         }
+                        {
+                            user?.email &&
+                            <Nav.Link
+                                as={Link}
+                                to="/addTreatments"
+                                className="item"
+                            >AddTreatments
+                            </Nav.Link>
+
+                        }
 
                         <Nav.Link
                             as={Link}
@@ -73,7 +83,6 @@ const Header = () => {
                                 onClick={logOut}
                                 className="btn btn-secondary me-2">LogOut</button>
 
-
                             : <Nav.Link
                                 as={Link}
                                 to="/login"
@@ -81,10 +90,10 @@ const Header = () => {
                             >Login</Nav.Link>}
 
                         <Navbar.Text>
-                            {user?.email &&
+                            {/* {user?.email &&
                                 <span className="user">Signed in as <a href="#login">{user?.displayName}</a></span>
-                            }
-                            {/* <img src={user?.photoURL} className="profile" alt="" /> */}
+                            } */}
+                            <img src={user?.photoURL} className="profile" alt="" />
                         </Navbar.Text>
                     </Navbar.Collapse>
                 </Container>
