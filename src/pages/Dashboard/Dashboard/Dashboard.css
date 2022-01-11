@@ -1,7 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .dashboard-container{
-    padding: 30px 0;
+    /* padding: 30px 0; */
     /* background-color: #FFFEF9; */
     background-color: #F3F5F9;
+    width: 100%;
+    overflow: hidden;
   }
   .dashboard {
       /* background-color: #1A2E35; */
@@ -11,7 +18,7 @@
       color: white;
       cursor: pointer;
       text-align: center;
-      border-radius: 10px;
+      /* border-radius: 10px; */
     }
     .dashboard-menu {
       margin: auto;

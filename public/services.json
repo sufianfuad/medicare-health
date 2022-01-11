@@ -46,5 +46,77 @@
         "description": "Neurologists are specialists who treat diseases of the brain and spinal cord, peripheral nerves and muscles.",
         "img": "https://i.ibb.co/0rLWqRt/pic6.jpg",
         "email": "neurology@gmail.com"
+    },
+    {
+        "id": 7,
+        "name": "Department of Urology",
+        "deptHead": "Dr Azizul Rahman",
+        "description": "Urology is a part of health care that deals with diseases of the male and female urinary tract (kidneys, ureters, bladder and urethra).",
+        "img": "https://i.ibb.co/PNc2FJQ/pic7.jpg",
+        "email": "urology@gmail.com"
+    },
+    {
+        "id": 8,
+        "name": "Department of Allergy/Immunology",
+        "deptHead": "Dr Gias Hasan",
+        "description": "Allergies are your body's reaction to a normally harmless substance such as pollen, molds, animal dander, latex, certain foods and insect stings.",
+        "img": "https://i.ibb.co/VTVWxkr/pic9.jpg",
+        "email": "allergy@gmail.com"
+    },
+    {
+        "id": 9,
+        "name": "Department of Gastroenterology",
+        "deptHead": "Dr Efthy Ahmed",
+        "description": "Gastroenterology is the study of the normal function and diseases of the esophagus, stomach, small intestine, colon and rectum, pancreas, gallbladder, bile ducts and liver.",
+        "img": "https://i.ibb.co/X3bDLMq/pic11.jpg",
+        "email": "gastroenterology@gmail.com"
+    },
+    {
+        "id": 10,
+        "name": "Department of Endocrinology",
+        "deptHead": "Dr Emdad Haque",
+        "description": "Hormone Therapy. You take supplements to restore levels of certain hormones. We may prescribe medications to help your body stop producing certain hormones or produce them at a slower rate.",
+        "img": "https://i.ibb.co/4FyY8Fh/pic12.jpg",
+        "email": "endocrinology@gmail.com"
+    },
+    {
+        "id": 11,
+        "name": "Department of Hematology",
+        "deptHead": "Dr Zuned Khan",
+        "description": "Hematology is the science or study of blood, blood-forming organs and blood diseases.",
+        "img": "https://i.ibb.co/XjM2HkR/pic15.jpg",
+        "email": "hematology@gmail.com"
+    },
+    {
+        "id": 12,
+        "name": "Department of Dermatology",
+        "deptHead": "Dr Hafsa Rahman",
+        "description": "Dermatology is the branch of medicine dealing with the skin. It is a speciality with both medical and surgical aspects.",
+        "img": "https://i.ibb.co/58t8LSG/pic14.jpg",
+        "email": "dermatology@gmail.com"
+    },
+    {
+        "id": 13,
+        "name": "Department of Colon and Rectal Surgery",
+        "deptHead": "Dr Usman Kader",
+        "description": "A colon and rectal surgeon is trained to diagnose and treat various diseases of the intestinal tract, colon, rectum, anal canal, and perianal area by medical and surgical means.",
+        "img": "https://i.ibb.co/8djHMwx/pic8.jpg",
+        "email": "colon@gmail.com"
+    },
+    {
+        "id": 14,
+        "name": "Department of Physiology",
+        "deptHead": "Dr Kamal Hossain",
+        "description": "Physiology is the science of life. It is the branch of biology that aims to understand the mechanisms of living things, from the basis of cell function at the ionic.",
+        "img": "https://i.ibb.co/pvm9WpG/pic10.jpg",
+        "email": "physiology@gmail.com"
+    },
+    {
+        "id": 15,
+        "name": "Blood Tests",
+        "deptHead": "Dr Athaur Rahman",
+        "description": "A blood test usually involves taking a blood sample from a blood vessel in your arm. The arm is a convenient part of the body to use because it can be easily.",
+        "img": "https://i.ibb.co/sw1Dsm7/pic13.jpg",
+        "email": "bloodtest@gmail.com"
     }
 ]

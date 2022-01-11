@@ -25,6 +25,7 @@ import About from './pages/About/About';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import AddTreatments from './pages/AddTreatments/AddTreatments';
 import Payment from './pages/Payment/Payment';
+import ManageTreatments from './pages/ManageTreatments/ManageTreatments';
 
 function App() {
   return (
@@ -44,7 +45,6 @@ function App() {
               <Home></Home>
             </Route>
 
-
             <Route path="/services">
               <Services></Services>
             </Route>
@@ -63,6 +63,10 @@ function App() {
 
             <PrivateRoute path="/payment">
               <Payment></Payment>
+            </PrivateRoute>
+
+            <PrivateRoute path="/manageTreatments">
+              <ManageTreatments></ManageTreatments>
             </PrivateRoute>
 
             <PrivateRoute path="/dashboard">

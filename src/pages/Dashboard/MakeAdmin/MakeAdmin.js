@@ -4,6 +4,7 @@ import { Alert } from 'react-bootstrap';
 //css
 import './MakeAdmin.css';
 import useAuth from '../../../hooks/useAuth';
+
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
     const [adminSuccess, setAdminSuccess] = useState(false);
@@ -43,7 +44,7 @@ const MakeAdmin = () => {
     return (
         <div className="makeAdmin-container">
             <h4 className="text-center text">Make Admin</h4>
-            <div className="form-area mt-5">
+            <div className="form-area mt-3">
                 <div className="form-container container">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input

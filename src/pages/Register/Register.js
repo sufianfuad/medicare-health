@@ -1,141 +1,86 @@
-import React, { useState } from 'react';
-import { Alert, Spinner } from 'react-bootstrap';
-//import Link
-import { Link, useHistory } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
-//image
-import loginBanner from '../../images/login-banner/loginBanner.jpg';
-import Footer from '../Shared/Footer/Footer';
+import React from 'react';
+
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box'
 import Header from '../Shared/Header/Header';
-//import css file
-import './Register.css'
+import { Container } from 'react-bootstrap';
+//CSS
+import './Register.css';
 
+import Users from './Users/Users';
+import Doctor from './Doctor/Doctor';
+import Attendee from './Attendee/Attendee';
+import Footer from '../Shared/Footer/Footer';
 const Register = () => {
-    const [loginData, setLoginData] = useState({});
+    function TabPanel(props) {
+        const { children, value, index, ...other } = props;
 
-    const history = useHistory();
-    const { user, registerUser, isLoading, authError } = useAuth();
-
-
-    const handleOnBlur = e => {
-        const field = e.target.name;
-        const value = e.target.value;
-        const newLoginData = { ...loginData }
-        newLoginData[field] = value;
-        console.log(newLoginData);
-        setLoginData(newLoginData);
+        return (
+            <div
+                role="tabpanel"
+                hidden={value !== index}
+                id={`simple-tabpanel-${index}`}
+                aria-labelledby={`simple-tab-${index}`}
+                {...other}
+            >
+                {value === index && (
+                    <Box sx={{ p: 3 }}>
+                        <Typography>{children}</Typography>
+                    </Box>
+                )}
+            </div>
+        );
     }
-    const handleLogInSubmit = e => {
-        if (loginData.password !== loginData.password2) {
-            alert('Your Password Did not match');
-            return;
-        }
-        registerUser(loginData.email, loginData.password, loginData.name, history)
-        e.preventDefault();
+
+    TabPanel.propTypes = {
+        children: PropTypes.node,
+        index: PropTypes.number.isRequired,
+        value: PropTypes.number.isRequired,
+    };
+
+    function a11yProps(index) {
+        return {
+            id: `simple-tab-${index}`,
+            'aria-controls': `simple-tabpanel-${index}`,
+        };
     }
+
+
+    const [value, setValue] = React.useState(0);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
 
     return (
         <>
             <Header></Header>
-            <div className="registration-container shadow-sm">
-                <div className="container">
-                    <div className="row pt-3 d-flex align-items-center">
-                        <div className="col-lg-6 col-md-6 col-12">
-                            <div className="register-banner">
-                                <img className="img-fluid" src={loginBanner} alt="" />
-                            </div>
-                        </div>
-                        <div className="col-lg-6 col-md-6 col-12">
-                            <div className="login-form mt-3 form-bg">
-                                <h2 className="text-center">Create <span className="account-color">Account</span></h2>
-                                {!isLoading &&
-                                    <form
-                                        onSubmit={handleLogInSubmit}
-                                        className="w-75 mx-auto">
-                                        <div class="mb-3">
-                                            <label htmlFor="exampleInputEmail1" className="form-label fw-bold">Your Name</label>
-                                            <input
-                                                name="name"
-                                                onBlur={handleOnBlur}
-                                                // onBlur={handleOnBlur}
-                                                className="form-control"
-                                                placeholder="Enter your Name"
-                                                required
-                                            />
-                                        </div>
-                                        {/* === */}
-                                        <div class="mb-3">
-                                            <label htmlFor="exampleInputEmail1" className="form-label fw-bold">Your Email</label>
-                                            <input
-                                                name="email"
-                                                type="email"
-                                                onBlur={handleOnBlur}
-                                                // onBlur={handleOnBlur}
-                                                className="form-control"
-                                                placeholder="Enter your Email"
-                                                required
-                                            />
-                                        </div>
-                                        {/* === */}
-                                        <div className="mb-3">
-                                            <label htmlFor="formGroupExampleInput" className="form-label fw-bold">Your Password</label>
-                                            <input
-                                                type="password"
-                                                name="password"
-                                                onBlur={handleOnBlur}
-                                                // onBlur={handleOnBlur}
-                                                className="form-control"
-                                                placeholder="password at least 6 digit"
-                                            />
-                                        </div>
-                                        <div className="mb-3">
-                                            <label htmlFor="formGroupExampleInput" className="form-label fw-bold">ReType Password</label>
-                                            <input
-                                                type="password"
-                                                name="password2"
-                                                onBlur={handleOnBlur}
-                                                // onBlur={handleOnBlur}
-                                                className="form-control"
-                                                placeholder="Confirm Password"
-                                            />
-                                        </div>
-
-                                        {/* == */}
-                                        <div>
-                                            <button
-                                                // onClick={handleLogIn}
-                                                type="submit" className="btn click-btn fw-bold btn-lg logIn-btn w-100">Register</button>
-
-                                        </div>
-                                        <Link
-                                            to="/login">
-                                            <a href="">Already Register? Login Please</a>
-                                            {/* <button type="text" className="btn btn-primary text-center">New In Super Deluxe? Create A Account</button> */}
-                                        </Link>
-                                    </form>
-                                }
-                                {
-                                    isLoading && <div className="text-center">
-                                        <Spinner animation="border" />
-                                    </div>
-                                }
-                                {
-                                    user?.email && <div class="alert alert-success" role="alert">
-                                        Successfully Created Account
-                                    </div>
-                                }
-                                {
-                                    authError && <Alert variant="danger">
-                                        {authError}
-                                    </Alert>
-                                }
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <Footer></Footer>
+            <Container className="toogle">
+                <Box sx={{ width: '100%' }}>
+                    <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
+                        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered>
+                            <Tab label="Users" {...a11yProps(0)} />
+                            <Tab label="Doctor" {...a11yProps(1)} />
+                            <Tab label="Medical Attendee" {...a11yProps(2)} />
+                        </Tabs>
+                    </Box>
+                    <TabPanel className="tab_bg" value={value} index={0}>
+                        {/* <User></User> */}
+                        <Users></Users>
+                    </TabPanel>
+                    <TabPanel className="tab_bg text-white" value={value} index={1}>
+                        <Doctor></Doctor>
+                    </TabPanel>
+                    <TabPanel className="tabbg" value={value} index={2}>
+                        {/* <Medical></Medical> */}
+                        {/* <Attendee></Attendee> */}
+                    </TabPanel>
+                </Box>
+            </Container>
+            <Footer />
         </>
     );
 };

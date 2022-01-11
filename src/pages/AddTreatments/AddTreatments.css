@@ -1,0 +1,30 @@
+.addTreatments-container{
+    padding: 50px 0;
+}
+.heading-title{
+    color: #262339;
+    font-weight: bold;
+}
+.form-container{
+    padding: 30px;
+    width: 500px;
+    box-shadow: 3px 5px 8px #262339 ;
+    box-sizing: border-box;
+    border-radius: 15px;
+    transition: 1s;
+}
+.form-container:hover{
+    background-color: #f0f0f0;
+}
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form-container input, textarea{
+    width: 60%;
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 10px;
+}

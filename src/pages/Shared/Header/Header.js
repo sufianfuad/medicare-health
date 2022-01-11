@@ -11,10 +11,9 @@ import './Header.css';
 
 
 const Header = () => {
-    const { user, logOut } = useAuth();
+    const { user, doctorRole, logOut } = useAuth();
     return (
         <>
-            {/* bg="dark" variant="dark" */}
             <Navbar className="navigation" collapseOnSelect expand="lg" sticky="top">
                 <Container>
                     <div className="d-flex justify-content-center align-items-center">
@@ -93,7 +92,9 @@ const Header = () => {
                             {/* {user?.email &&
                                 <span className="user">Signed in as <a href="#login">{user?.displayName}</a></span>
                             } */}
-                            <img src={user?.photoURL} className="profile" alt="" />
+                            {user?.email &&
+                                <span className="profile-img"><img src={user?.photoURL} alt="" /></span>
+                            }
                         </Navbar.Text>
                     </Navbar.Collapse>
                 </Container>

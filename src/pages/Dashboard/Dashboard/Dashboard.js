@@ -13,7 +13,6 @@ import Reviews from '../../Reviews/Reviews';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddTreatments from '../../AddTreatments/AddTreatments';
 import ManageAllOrder from '../ManageAllOrder/ManageAllOrder';
-import ManageTreatments from '../ManageTreatments/ManageTreatments';
 import Header from '../../Shared/Header/Header';
 import AddDoctor from '../AddDoctor/AddDoctor';
 import Footer from '../../Shared/Footer/Footer';
@@ -26,19 +25,20 @@ import {
     useRouteMatch
 } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import ManageTreatments from '../../ManageTreatments/ManageTreatments';
 
 const Dashboard = () => {
     //For Nesting
     const { path, url } = useRouteMatch();
 
-    const { user, admin, logOut } = useAuth();
+    const { user, doctor, admin, doctorRole, logOut } = useAuth();
     // react font awesome
     const dashIcon = <FontAwesomeIcon icon={faBars} />
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
             <div className="dashboard-container">
-                <div className="row container">
+                <div className="row">
                     <div className="col-md-3 col-lg-3 col-sm-12">
                         <div className="dashboard">
                             <h4 className="pt-5 fw-bold"><span className="dashIcon me-2 px-1">{dashIcon}</span>Dashboard</h4>
@@ -50,6 +50,11 @@ const Dashboard = () => {
                             <div className="logged-user pt-2">
                                 <p>Welcome! {user?.displayName}</p>
                             </div>
+                            {/* <div>
+                                if (user.email || doctor.email) {
+                                    
+                                }
+                            </div> */}
                             {
                                 !admin && <div>
                                     <Link to={`${url}/appointment`}>
@@ -66,7 +71,7 @@ const Dashboard = () => {
                                     </Link>
 
                                     <Link to={`${url}/myOrders`}>
-                                        <li className="dashboard-menu mt-3">My Sit Order</li>
+                                        <li className="dashboard-menu mt-3">My Sit Booking</li>
                                     </Link>
 
                                     <Link to={`${url}/review`}>
@@ -81,15 +86,32 @@ const Dashboard = () => {
                                     </Link>
 
                                     <Link to={`${url}/addDoctor`}>
-                                        <li className="dashboard-menu mt-3">Add Doctor</li>
+                                        <li className="dashboard-menu mt-3">Make Doctor</li>
                                     </Link>
 
-                                    <Link to={`${url}/manageTreatment`}>
+                                    <Link to={`${url}/manageTreatments`}>
                                         <li className="dashboard-menu mt-3">Manage Treatments</li>
                                     </Link>
 
                                     <Link to={`${url}/manageOrders`}>
                                         <li className="dashboard-menu mt-3">Manage all Order</li>
+                                    </Link>
+
+                                    <Link to={`${url}/manageUsers`}>
+                                        <li className="dashboard-menu mt-3">Manage all Users</li>
+                                    </Link>
+                                </div>
+                            }
+
+                            {doctor?.email && doctorRole ?
+                                <div>
+                                    <Link to="/">
+                                        <button className="btn-visit-front">Visit Site</button>
+                                    </Link>
+                                </div>
+                                : <div>
+                                    <Link to={`${url}/manageDoctors`}>
+                                        <li className="dashboard-menu mt-3">Manage all Doctors</li>
                                     </Link>
                                 </div>
                             }
@@ -137,7 +159,7 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </div>
     );
 };
