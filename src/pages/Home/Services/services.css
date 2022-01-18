@@ -13,3 +13,14 @@
     display: block;
     background-color: blue;
 }
+.pagination{
+    margin: 30px;
+}
+.pagination button{
+    padding: 0, 10px;
+    margin-right: 20px;
+}
+.pagination .selected{
+    background-color: rgb(127, 69, 182);
+    color: #fff;
+}

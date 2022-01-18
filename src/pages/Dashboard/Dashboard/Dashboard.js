@@ -13,10 +13,10 @@ import Reviews from '../../Reviews/Reviews';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddTreatments from '../../AddTreatments/AddTreatments';
 import ManageAllOrder from '../ManageAllOrder/ManageAllOrder';
-import Header from '../../Shared/Header/Header';
-import AddDoctor from '../AddDoctor/AddDoctor';
-import Footer from '../../Shared/Footer/Footer';
+import ManageTreatments from '../../ManageTreatments/ManageTreatments';
+import MakeDoctor from '../MakeDoctor/MakeDoctor';
 
+import useAuth from '../../../hooks/useAuth';
 // import
 import {
     Switch,
@@ -24,8 +24,10 @@ import {
     Link,
     useRouteMatch
 } from 'react-router-dom';
-import useAuth from '../../../hooks/useAuth';
-import ManageTreatments from '../../ManageTreatments/ManageTreatments';
+import AddDoctor from '../AddDoctor/AddDoctor';
+import MyInfo from '../MyInfo/MyInfo';
+
+
 
 const Dashboard = () => {
     //For Nesting
@@ -50,11 +52,6 @@ const Dashboard = () => {
                             <div className="logged-user pt-2">
                                 <p>Welcome! {user?.displayName}</p>
                             </div>
-                            {/* <div>
-                                if (user.email || doctor.email) {
-                                    
-                                }
-                            </div> */}
                             {
                                 !admin && <div>
                                     <Link to={`${url}/appointment`}>
@@ -62,8 +59,7 @@ const Dashboard = () => {
                                     </Link>
 
                                     <Link to={`${url}/payment`}>
-                                        <li className="dashboard-menu
-                                         mt-3">Payment</li>
+                                        <li className="dashboard-menu mt-3">Payment</li>
                                     </Link>
 
                                     <Link to={`${url}/addTreatments`}>
@@ -72,6 +68,10 @@ const Dashboard = () => {
 
                                     <Link to={`${url}/myOrders`}>
                                         <li className="dashboard-menu mt-3">My Sit Booking</li>
+                                    </Link>
+
+                                    <Link to={`${url}/myInfo`}>
+                                        <li className="dashboard-menu mt-3">My Info</li>
                                     </Link>
 
                                     <Link to={`${url}/review`}>
@@ -85,8 +85,12 @@ const Dashboard = () => {
                                         <li className="dashboard-menu mt-3">Make Admin</li>
                                     </Link>
 
-                                    <Link to={`${url}/addDoctor`}>
+                                    <Link to={`${url}/makeDoctor`}>
                                         <li className="dashboard-menu mt-3">Make Doctor</li>
+                                    </Link>
+
+                                    <Link to={`${url}/addDoctor`}>
+                                        <li className="dashboard-menu mt-3">Add Doctor</li>
                                     </Link>
 
                                     <Link to={`${url}/manageTreatments`}>
@@ -127,12 +131,18 @@ const Dashboard = () => {
                             <Route exact path={`${path}/appointment`}>
                                 <Appointments></Appointments>
                             </Route>
-                            <Route exact path={`${path}/payment`}>
+                            {/* <Route exact path={`${path}/payment`}>
                                 <Payment></Payment>
+                            </Route> */}
+
+                            <Route exact path={`${path}/myInfo`}>
+                                <MyInfo></MyInfo>
                             </Route>
+
                             <Route exact path={`${path}/myOrders`}>
                                 <MyOrders></MyOrders>
                             </Route>
+
                             <Route exact path={`${path}/review`}>
                                 <Reviews></Reviews>
                             </Route>
@@ -140,9 +150,14 @@ const Dashboard = () => {
                                 <MakeAdmin></MakeAdmin>
                             </AdminRoute>
 
+                            <AdminRoute exact path={`${path}/makeDoctor`}>
+                                <MakeDoctor></MakeDoctor>
+                            </AdminRoute>
+
                             <AdminRoute exact path={`${path}/addDoctor`}>
                                 <AddDoctor></AddDoctor>
                             </AdminRoute>
+
                             <AdminRoute exact path={`${path}/addTreatments`}>
                                 <AddTreatments></AddTreatments>
                             </AdminRoute>

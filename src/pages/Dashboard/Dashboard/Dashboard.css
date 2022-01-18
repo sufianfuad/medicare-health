@@ -8,13 +8,16 @@
     /* background-color: #FFFEF9; */
     background-color: #F3F5F9;
     width: 100%;
+    height: 100%;
     overflow: hidden;
   }
   .dashboard {
       /* background-color: #1A2E35; */
       /* background-color: #6E8FE1; */
       background-color: #051831;
-      height: 100vh;
+      height: 100%;
+      width: 100%;
+      padding-bottom: 20px;
       color: white;
       cursor: pointer;
       text-align: center;

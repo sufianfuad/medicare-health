@@ -1,71 +1,84 @@
-import { Alert } from '@mui/material';
+import { Button, Input, TextField } from '@mui/material';
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import useAuth from '../../../hooks/useAuth';
+
+import './AddDoctor.css';
 
 const AddDoctor = () => {
-    const [email, setEmail] = useState('');
-    const [doctorsSuccess, setDoctorsSuccess] = useState(false);
 
-    const { token } = useAuth();
+    const [doctorName, setDoctorName] = useState('');
+    const [doctorEmail, setDoctorEmail] = useState('');
+    const [doctorPic, setDoctorPic] = useState(null);
 
-    const { register,
-        handleSubmit,
-        reset,
-        formState: { errors }
-    } = useForm();
+    const [success, setSuccess] = useState(false)
 
-    const handleOnBlur = e => {
-        setEmail(e.target.value);
-    }
+    const handleSubmit = e => {
+        e.preventDefault()
 
-    const onSubmit = data => {
-        const doctor = { email };
-        fetch('http://localhost:7000/doctors/doctor', {
-            method: 'PUT',
-            headers: {
-                // 'authorization': `Bearer ${token}`,
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(doctor)
+        if (!doctorPic) {
+            return;
+        }
+        const formData = new FormData();
+        formData.append('doctorName', doctorName);
+        formData.append('doctorEmail', doctorEmail);
+        formData.append('doctorPic', doctorPic);
+
+
+        fetch('http://localhost:7000/add_doctor', {
+            method: 'POST',
+            // headers: {
+            //     'content-type': 'application/json'
+            // },
+            body: formData
         })
             .then(res => res.json())
-            .then(result => {
-                if (data.modifiedCount) {
-                    reset();
-                    setDoctorsSuccess(true);
+            .then(data => {
+                if (data.insertedId) {
+                    setSuccess('Doctor added successfully')
+                    console.log('doctor added successfully');
                 }
             })
-        // console.log(data)
+            .catch(error => {
+                console.error('Error:', error);
+            });
 
-    };
+    }
+
     return (
-        <div className="makeAdmin-container">
-            <h4 className="text-center text">Make Doctor</h4>
-            <div className="form-area mt-5">
-                <div className="form-container container">
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <input
-                            {...register("Email")}
-                            onBlur={handleOnBlur}
-                            placeholder="example@gmail.com"
-                            className="p-2 m-2 w-50 inputs-field"
-                        />
-                        {/*  */}
-                        {errors.exampleRequired && <span>This field is required</span>}
+        <div className='addDoctor-container'>
+            <h2 className='text-center'>Add A Doctor</h2>
 
-                        <input
-                            type="submit"
-                            value="Make as Doctor"
-                            className="btn add-btn w-50 px-3 py-2"
-                        />
-                    </form>
-                    {
-                        doctorsSuccess && <Alert severity='success'>
-                            Added You Doctor Successfully!
-                        </Alert>
-                    }
-                </div>
+            <div className='text-center'>
+                <form onSubmit={handleSubmit}>
+                    <TextField
+                        sx={{ width: '50%' }}
+                        label="Name"
+                        required
+                        onChange={e => setDoctorName(e.target.value)}
+                        variant="standard"
+                    />
+                    <br />
+                    <TextField
+                        sx={{ width: '50%' }}
+                        label="Email"
+                        type='email'
+                        required
+                        onChange={e => setDoctorEmail(e.target.value)}
+                        variant="standard"
+                    />
+                    <br />
+                    <Input
+                        accept="image/png, image/jpg, image/pdf"
+                        multiple
+                        type="file"
+                        onChange={e => setDoctorPic(e.target.files[0])}
+                    />
+                    <br />
+                    <br />
+                    <Button variant="contained" type='submit'>
+                        Add Doctor
+                    </Button>
+                </form>
+                {success && <p style={{ color: 'green' }}>{success}</p>}
             </div>
         </div>
     );

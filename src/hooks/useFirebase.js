@@ -228,14 +228,14 @@ const useFirebase = () => {
     //         .then(data => setAttend(data.attendee))
     // }, [attendee.email]);
 
-    useEffect(() => {
-        fetch(`http://localhost:7000/doctors/${doctor?.email}`)
-            .then(res => res.json())
-            .then(data => {
-                setDoctorRole(data.doctorRole)
-                console.log(data.doctorRole);
-            })
-    }, [doctor?.email])
+    // useEffect(() => {
+    //     fetch(`http://localhost:7000/doctors/${doctor?.email}`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setDoctorRole(data.doctorRole)
+    //             console.log(data.doctorRole);
+    //         })
+    // }, [doctor?.email])
 
     //user Logout
     const logOut = () => {

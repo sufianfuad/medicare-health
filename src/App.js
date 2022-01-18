@@ -26,6 +26,7 @@ import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import AddTreatments from './pages/AddTreatments/AddTreatments';
 import Payment from './pages/Payment/Payment';
 import ManageTreatments from './pages/ManageTreatments/ManageTreatments';
+import Profile from './pages/Profile/Profile';
 
 function App() {
   return (
@@ -48,6 +49,9 @@ function App() {
             <Route path="/services">
               <Services></Services>
             </Route>
+            <PrivateRoute path="/profile">
+              <Profile></Profile>
+            </PrivateRoute>
 
             <PrivateRoute path="/sitbooking/:bookingId">
               <SitBooking></SitBooking>

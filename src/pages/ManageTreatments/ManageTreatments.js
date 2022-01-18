@@ -10,7 +10,7 @@ const ManageTreatments = () => {
     useEffect(() => {
         fetch('http://localhost:7000/treatments')
             .then(res => res.json())
-            .then(data => setManageTreatment(data))
+            .then(data => setManageTreatment(data.treatments))
     }, []);
     return (
         <div className="ManageTreatments-container">

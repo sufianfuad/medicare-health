@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Contact from '../../Contact/Contact';
 import Sanitizer from '../../Sanitizer/Sanitizer';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import Banner from '../Banner/Banner';
+import Doctors from '../Doctors/Doctors';
 import Services from '../Services/Services';
 //
 
@@ -11,7 +13,7 @@ import './Home.css';
 
 const Home = () => {
 
-    const [homeService, setHomeService] = useState([])
+    const [homeService, setHomeService] = useState([]);
 
     useEffect(() => {
         fetch('https://damp-refuge-56099.herokuapp.com/treatments')
@@ -58,6 +60,8 @@ const Home = () => {
             </div>
             {/* <Services></Services> */}
             <Sanitizer></Sanitizer>
+            <Doctors></Doctors>
+            <Contact></Contact>
             <Footer></Footer>
         </div>
     );
