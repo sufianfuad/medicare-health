@@ -1,24 +1,41 @@
 .contact-container{
-    padding: 50px 0;
-    background-color: #373737;
-    height: 100%;
+    padding: 40px 0;
+    background-color: #142952;
+    /* background-color: #3161BE; */
+    /* background-color: #3F0B6D;
+    background-color: #2D0A4C;
+    background-color: #27004C;
+    background-color: #4A32A5;
+     */
 }
-.contacts-form input{
-    width: 50%;
+.contact-formArea{
+    text-align: left;
+    color: #F3F5F9;
+}
+.contact-form {
+    text-align: left;
+}
+.contact-form input{
+    width: 80%;
     border-radius: 3px;
-    border: 1px solid #F3F5F9;
-    padding: 5px;
-    margin: 10px;
+    border: none;
+    /* border: 1px solid #F3F5F9; */
+    padding: 8px;
+    margin: 10px, 10px 10px, 0;
     color: black;
     font-size: 16px;
     line-height: 24px;
     overflow: visible;
 }
-.contacts-form textarea{
-    width: 50%;
-    /* background-color: transparent; */
+.input-group input, textarea{
+    margin: 7px;
+}
+.contact-form textarea{
+    width: 80%;
+    /* height: 200px; */
     border-radius: 3px;
-    border: 1px solid #F3F5F9;
+    border: none;
+    /* border: 1px solid #F3F5F9; */
     padding: 10px;
     height: 115px;
     color: black;
@@ -27,11 +44,28 @@
 }
 
 .send-btn{
-    width: 30%;
+    color: #F3F5F9;
+    width: 80%;
     padding: 10px 25px;
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 25px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 20px;
+    background-color: #3161BE;
+}
+/* .client-name input{
+    width: 25%;
+
+    display: flex;
+    text-align: center;
+    
+} */
+
+.contact-img img{
+    width: 100%;
+    border-radius: 10px;
+}
+.contact-color{
+    color: tomato;
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Controller, useForm } from "react-hook-form";
-
+// axios import
 import axios from 'axios';
 
 import Header from '../Shared/Header/Header';
@@ -12,9 +12,12 @@ import './Profile.css';
 import Select from 'react-select';
 import { Checkbox } from '@mui/material';
 
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
 const Profile = () => {
 
-    const [info, setInfo] = useState({});
+    // const [info, setInfo] = useState({});
 
     const { user } = useAuth();
 
@@ -29,7 +32,8 @@ const Profile = () => {
         axios.post('http://localhost:7000/user_info', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('added successfully');
+                    Swal.fire(`${user?.displayName} successfully added your details`);
+                    // alert('added successfully');
                     reset();
                 }
             })
@@ -38,7 +42,7 @@ const Profile = () => {
         <>
             <Header></Header>
             <div className='profile-container'>
-                <h2 className='text-center fw-bold'>User Profile Information</h2>
+                <h2 className='text-center fw-bold'>{user.displayName} <span className='heading-color'>!</span> Profile Information</h2>
                 <div className='container'>
                     <form className='profile-form' onSubmit={handleSubmit(onSubmit)}>
                         <label className=''>Name</label>
@@ -74,7 +78,7 @@ const Profile = () => {
                                 <Select
                                     {...field}
                                     options={[
-                                        { value: "Headeche", label: "Headeche" },
+                                        { value: "Headache", label: "Headache" },
                                         { value: "Tiredness", label: "Tiredness" },
                                         { value: "nausea", label: "Nausea" },
                                         { value: "Backache", label: "Backache" },
@@ -98,18 +102,18 @@ const Profile = () => {
                         <br />
                         <label className='pt-2'>Water Intake</label>
                         <input defaultValue=""
-                            type="number" {...register("number")} placeholder="Today's water intake" />
+                            type="number" {...register("waterIntake")} placeholder="Today's water intake" />
 
                         <label className='pt-2'>Oxygen Level</label>
                         <input defaultValue=""
-                            type="number" {...register("number")} placeholder="Today's Oxygen level" />
+                            type="number" {...register("oxygenLevel")} placeholder="Today's Oxygen level" />
 
                         <label className='pt-2'>Give your Contact number</label>
                         <input
                             defaultValue=""
                             type="number" {...register("phone")} placeholder="Your phone number" />
                         <textarea defaultValue="" {...register("message")} placeholder='say something' />
-                        <input type="submit" />
+                        <input type="submit" className='submitBtn' />
                     </form>
                 </div>
             </div>

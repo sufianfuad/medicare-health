@@ -44,13 +44,13 @@ const Login = () => {
                     <div className="row d-flex align-items-center">
                         <div className="col-lg-6 col-md-6 col-12">
                             <div className="login-form mt-3">
-                                <h2 className="text-center">Login Your Account</h2>
+                                <h2 className="text-center">Log in Here !</h2>
                                 <div>
                                     {/* ================================== */}
                                     <form onSubmit={handleLogInSubmit}
                                         className="w-75 mx-auto">
                                         <div class="mb-3">
-                                            <label htmlFor="exampleInputEmail1" className="form-label fw-bold">Email address</label>
+                                            <label htmlFor="exampleInputEmail1" className="form-label fw-bold">Email Address</label>
                                             <input
                                                 name="email"
                                                 onBlur={handleOnChange}

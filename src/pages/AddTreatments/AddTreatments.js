@@ -35,7 +35,6 @@ const AddTreatments = () => {
     // };
     return (
         <>
-            <Header></Header>
             <section className="addTreatments-container">
                 <h1 className="mb-3 text-center heading-title">Please Add Treatments<span className="dot-color">.</span></h1>
                 <div className="form-container container">
@@ -63,7 +62,6 @@ const AddTreatments = () => {
                 {/* </div>
             </div> */}
             </section>
-            <Footer></Footer>
         </>
     );
 };

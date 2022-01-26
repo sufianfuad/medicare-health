@@ -6,10 +6,12 @@ import { Route, Redirect } from 'react-router-dom';
 //import useAuth
 import useAuth from '../../../hooks/useAuth';
 
+import './PrivateRoute.css';
+
 const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth();
     if (isLoading) {
-        return <div className="text-center">
+        return <div className="text-center loader">
             <Spinner animation="border" />
         </div>
     }

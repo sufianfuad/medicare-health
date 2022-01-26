@@ -54,21 +54,21 @@ const Dashboard = () => {
                             </div>
                             {
                                 !admin && <div>
-                                    <Link to={`${url}/appointment`}>
+                                    {/* <Link to={`${url}/appointment`}>
                                         <li className="dashboard-menu mt-3">Appointment</li>
-                                    </Link>
+                                    </Link> */}
 
-                                    <Link to={`${url}/payment`}>
+                                    {/* <Link to={`${url}/payment`}>
                                         <li className="dashboard-menu mt-3">Payment</li>
-                                    </Link>
+                                    </Link> */}
 
                                     <Link to={`${url}/addTreatments`}>
                                         <li className="dashboard-menu mt-3">Add a Treatment</li>
                                     </Link>
 
-                                    <Link to={`${url}/myOrders`}>
+                                    {/* <Link to={`${url}/myOrders`}>
                                         <li className="dashboard-menu mt-3">My Sit Booking</li>
-                                    </Link>
+                                    </Link> */}
 
                                     <Link to={`${url}/myInfo`}>
                                         <li className="dashboard-menu mt-3">My Info</li>
@@ -128,9 +128,9 @@ const Dashboard = () => {
                     </div>
                     <div className="col-lg-9 col-md-9 col-sm-12">
                         <Switch>
-                            <Route exact path={`${path}/appointment`}>
+                            {/* <Route exact path={`${path}/appointment`}>
                                 <Appointments></Appointments>
-                            </Route>
+                            </Route> */}
                             {/* <Route exact path={`${path}/payment`}>
                                 <Payment></Payment>
                             </Route> */}
@@ -139,9 +139,9 @@ const Dashboard = () => {
                                 <MyInfo></MyInfo>
                             </Route>
 
-                            <Route exact path={`${path}/myOrders`}>
+                            {/* <Route exact path={`${path}/myOrders`}>
                                 <MyOrders></MyOrders>
-                            </Route>
+                            </Route> */}
 
                             <Route exact path={`${path}/review`}>
                                 <Reviews></Reviews>
@@ -158,9 +158,9 @@ const Dashboard = () => {
                                 <AddDoctor></AddDoctor>
                             </AdminRoute>
 
-                            <AdminRoute exact path={`${path}/addTreatments`}>
+                            <Route exact path={`${path}/addTreatments`}>
                                 <AddTreatments></AddTreatments>
-                            </AdminRoute>
+                            </Route>
 
                             <AdminRoute exact path={`${path}/manageTreatments`}>
                                 <ManageTreatments></ManageTreatments>

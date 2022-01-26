@@ -1,5 +1,9 @@
 .profile-container{
     padding: 50px 0;
+    background-color: #F3F5F9;
+}
+.heading-color{
+    color: #890036;
 }
 .profile-form{
     margin: 30px 150px;
@@ -26,4 +30,10 @@
 } */
 .error{
     color: red;
+}
+.submitBtn{
+    background-color: #890036;
+    color: darkcyan;
+    font-size: 18px;
+    font-weight: 500;
 }

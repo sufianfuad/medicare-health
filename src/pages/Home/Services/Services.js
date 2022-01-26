@@ -5,7 +5,7 @@ import './services.css'
 
 const Services = () => {
     // use state
-    //treatments to be rendered on the UI
+    //treatments k rendered kore UI tekhe
     const [services, setServices] = useState([]);
 
     // const [pageCount, setPageCount] = useState(0);

@@ -9,6 +9,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
+
 //import components
 import Home from './pages/Home/Home/Home';
 // import Header from './pages/Shared/Header/Header';
