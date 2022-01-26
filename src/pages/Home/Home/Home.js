@@ -16,7 +16,7 @@ const Home = () => {
     const [homeService, setHomeService] = useState([]);
 
     useEffect(() => {
-        fetch('https://damp-refuge-56099.herokuapp.com/treatments')
+        fetch('http://localhost:7000/treatments')
             .then(res => res.json())
             .then(data => setHomeService(data))
     }, [])
