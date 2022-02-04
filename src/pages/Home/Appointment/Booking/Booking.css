@@ -1,0 +1,12 @@
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation3.css-87ir2a-MuiPaper-root {
+    background-color: blanchedalmond;
+    /* background-color: #F6D4E6; */
+    /* background-color: #FDF2F8; */
+    /* background-color: #374151; */
+    transition: 0.5s;
+}
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation3.css-87ir2a-MuiPaper-root:hover {
+    background-color: aliceblue;
+    transform: scale(1.2s);
+    transition: 1s;
+}

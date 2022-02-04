@@ -2,17 +2,22 @@ import React from 'react';
 import './Appointment.css';
 
 //image
-import img1 from '../../../images/about/dp1.jpg';
-import img2 from '../../../images/about/dp2.jpg';
-import img3 from '../../../images/about/dp3.jpg';
-import img4 from '../../../images/about/dp4.jpg';
-import Footer from '../../Shared/Footer/Footer';
-import Header from '../../Shared/Header/Header';
+import img1 from '../../../../images/about/dp1.jpg';
+import img2 from '../../../../images/about/dp2.jpg';
+import img3 from '../../../../images/about/dp3.jpg';
+import img4 from '../../../../images/about/dp4.jpg';
+import Footer from '../../../Shared/Footer/Footer';
+import AppointmentHeader from '../AppointmentHeader/AppointmentHeader';
+import AvailableAppointments from '../AvailableAppointments/AvailableAppointments';
+import Header from '../../../Shared/Header/Header';
 
 const Appointment = () => {
+    const [date, setDate] = React.useState(new Date());
     return (
         <>
             <Header></Header>
+            <AppointmentHeader date={date} setDate={setDate} />
+            <AvailableAppointments date={date} />
             <div className="appointment">
                 <div className="container">
                     <div>
@@ -70,6 +75,7 @@ const Appointment = () => {
                     </div>
                 </div>
             </div>
+
             <Footer />
         </>
     );

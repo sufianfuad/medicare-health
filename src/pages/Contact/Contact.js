@@ -1,11 +1,17 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content'
+import withReactContent from 'sweetalert2-react-content';
+
+//font awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+
 import './Contact.css';
 import contactImg from '../../images/contact-1.jpg';
 
 const Contact = () => {
+    const sendIcon = <FontAwesomeIcon icon={faPaperPlane} />
 
     const form = useRef();
 
@@ -79,7 +85,7 @@ const Contact = () => {
                                 </div>
                                 <div className=''>
                                     <button className='send-btn' type="submit" value='Send'>
-                                        Send
+                                        <span className='send-icon me-2'>{sendIcon}</span> Send
                                     </button>
                                 </div>
                             </form>

@@ -13,19 +13,19 @@ import './Home.css';
 
 const Home = () => {
 
-    const [homeService, setHomeService] = useState([]);
+    // const [homeService, setHomeService] = useState([]);
 
-    useEffect(() => {
-        fetch('http://localhost:7000/treatments')
-            .then(res => res.json())
-            .then(data => setHomeService(data))
-    }, [])
+    // useEffect(() => {
+    //     fetch('http://localhost:7000/treatments')
+    //         .then(res => res.json())
+    //         .then(data => setHomeService(data))
+    // }, [])
 
     return (
         <div id="home">
             <Header></Header>
             <Banner></Banner>
-            <div className="home-container container">
+            {/* <div className="home-container container">
                 <div className="row ">
                     <div className="text-center pb-3">
                         <div className="services-title">
@@ -39,13 +39,13 @@ const Home = () => {
                                     <div className="service-card">
                                         <div className="p-3">
                                             <div className="service-img">
-                                                <img src={service.img} alt="" />
+                                                <img className='img-fluid' src={service?.img} alt="" />
                                             </div>
                                             <div className="service-info pt-3">
-                                                <h4><span className="service-title fw-bold">{service.name}</span></h4>
-                                                <p><span className="text"><strong>About <small>{service.name}: </small></strong></span> {service.description}</p>
+                                                <h4><span className="service-title fw-bold">{service?.name}</span></h4>
+                                                <p><span className="text"><strong>About <small>{service?.name}: </small></strong></span> {service?.description}</p>
                                             </div>
-                                            <Link to={`/sitbooking/${service.id}`}>
+                                            <Link to={`/sitbooking/${service?.id}`}>
                                                 <button className="btn px-3 py-2 details">Details</button>
                                             </Link>
                                             <div className="">
@@ -57,7 +57,7 @@ const Home = () => {
                         )
                     }
                 </div>
-            </div>
+            </div> */}
             {/* <Services></Services> */}
             <Sanitizer></Sanitizer>
             <Doctors></Doctors>

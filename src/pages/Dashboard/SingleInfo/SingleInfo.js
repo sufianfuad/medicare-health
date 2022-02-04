@@ -12,7 +12,10 @@ const SingleInfo = ({ info }) => {
 
     //DELETE Info
     const handleDeleteInfo = id => {
-        // const proceed = 
+        // const proceed =  Swal.fire('Are you sure, want to delete your information');
+        //  window.confirm('Are you sure, want to delete your information')
+        // if (proceed) {
+
         // Swal.fire({
         //     title: 'Are you sure?',
         //     text: "You won't be able to revert this!",
@@ -21,7 +24,8 @@ const SingleInfo = ({ info }) => {
         //     confirmButtonColor: '#3085d6',
         //     cancelButtonColor: '#d33',
         //     confirmButtonText: 'Yes, delete it!'
-        // }).then((result) => {
+        // })
+        // .then((result) => {
         //     if (result.isConfirmed) {
         //         Swal.fire(
         //             'Deleted!',

@@ -9,6 +9,7 @@ const AddDoctor = () => {
     const [doctorName, setDoctorName] = useState('');
     const [doctorEmail, setDoctorEmail] = useState('');
     const [doctorPic, setDoctorPic] = useState(null);
+    // const [docRate, setDocRate] = useState('')
 
     const [success, setSuccess] = useState(false);
 

@@ -1,0 +1,10 @@
+
+.regular-btn{
+    background-color: coral;
+    color: aliceblue;
+    font-size: 18px;
+    font-weight: 600;
+}
+.regular-btn:hover{
+    color: darkslategray;
+}

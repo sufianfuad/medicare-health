@@ -6,7 +6,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import './Dashboard.css';
 
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
-import Appointments from '../Appointments/Appointments';
+// import Appointments from '../Appointments/Appointments';
 import Payment from '../../Payment/Payment';
 import MyOrders from '../MyOrders/MyOrders';
 import Reviews from '../../Reviews/Reviews';

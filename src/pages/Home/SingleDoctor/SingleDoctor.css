@@ -1,0 +1,25 @@
+
+.doctor-card{
+    width: 350px;
+    margin: 15px;
+    /* border: 1px solid tomato; */
+    border-radius: 0 0 15px 15px;
+}
+.dCard{
+    margin-bottom: 10px;
+}
+.doctor-img{
+    padding: 5px;
+}
+.doctor-img img{
+    /* width: 300px; */
+    border-radius: 10px;
+    width: 100%;
+}
+.doctor-info{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.appointment-icon{
+    color: rgba(83, 16, 92, 0.911);
+}

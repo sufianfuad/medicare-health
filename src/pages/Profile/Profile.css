@@ -33,7 +33,11 @@
 }
 .submitBtn{
     background-color: #890036;
-    color: darkcyan;
+    color: #F3F5F9;
     font-size: 18px;
     font-weight: 500;
+}
+.profile-card{
+    background-color: #1b3261;
+    border-radius: 0 0 30px 30px;
 }
