@@ -12,7 +12,7 @@ import MyOrders from '../MyOrders/MyOrders';
 import Reviews from '../../Reviews/Reviews';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddTreatments from '../../AddTreatments/AddTreatments';
-import ManageAllOrder from '../ManageAllOrder/ManageAllOrder';
+// import ManageAllOrder from '../ManageAllOrder/ManageAllOrder';
 import ManageTreatments from '../../ManageTreatments/ManageTreatments';
 import MakeDoctor from '../MakeDoctor/MakeDoctor';
 
@@ -26,6 +26,9 @@ import {
 } from 'react-router-dom';
 import AddDoctor from '../AddDoctor/AddDoctor';
 import MyInfo from '../MyInfo/MyInfo';
+import ManageAllAppointment from '../ManageAllAppointment/ManageAllAppointment';
+import ManageAllProfile from '../ManageAllProfile/ManageAllProfile';
+import ManageAllDoctor from '../ManageAllDoctor/ManageAllDoctor';
 
 
 
@@ -93,16 +96,16 @@ const Dashboard = () => {
                                         <li className="dashboard-menu mt-3">Add Doctor</li>
                                     </Link>
 
-                                    <Link to={`${url}/manageTreatments`}>
+                                    {/* <Link to={`${url}/manageTreatments`}>
                                         <li className="dashboard-menu mt-3">Manage Treatments</li>
+                                    </Link> */}
+
+                                    <Link to={`${url}/manageAppointments`}>
+                                        <li className="dashboard-menu mt-3">Manage all Appointments</li>
                                     </Link>
 
-                                    <Link to={`${url}/manageOrders`}>
-                                        <li className="dashboard-menu mt-3">Manage all Order</li>
-                                    </Link>
-
-                                    <Link to={`${url}/manageUsers`}>
-                                        <li className="dashboard-menu mt-3">Manage all Users</li>
+                                    <Link to={`${url}/manageProfiles`}>
+                                        <li className="dashboard-menu mt-3">Manage all Profile Info</li>
                                     </Link>
                                 </div>
                             }
@@ -166,8 +169,16 @@ const Dashboard = () => {
                                 <ManageTreatments></ManageTreatments>
                             </AdminRoute>
 
-                            <AdminRoute exact path={`${path}/manageOrders`}>
-                                <ManageAllOrder></ManageAllOrder>
+                            <AdminRoute exact path={`${path}/manageAppointments`}>
+                                <ManageAllAppointment></ManageAllAppointment>
+                            </AdminRoute>
+
+                            <AdminRoute exact path={`${path}/manageProfiles`}>
+                                <ManageAllProfile></ManageAllProfile>
+                            </AdminRoute>
+
+                            <AdminRoute exact path={`${path}/manageDoctors`}>
+                                <ManageAllDoctor></ManageAllDoctor>
                             </AdminRoute>
 
                         </Switch>

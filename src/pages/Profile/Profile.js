@@ -15,7 +15,7 @@ import './Profile.css';
 import Select from 'react-select';
 import { Checkbox } from '@mui/material';
 
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content'
 
 const Profile = () => {

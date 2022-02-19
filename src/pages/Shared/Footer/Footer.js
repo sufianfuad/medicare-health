@@ -40,9 +40,9 @@ const Footer = () => {
                         <div className="footer-menu">
                             <ul>
                                 <li><a href="/home" className="menu">Home</a></li>
-                                <li><a href="/home" className="menu">About</a></li>
                                 <li><a href="/home" className="menu">Services</a></li>
-                                <li><a href="/home" className="menu">Profession</a></li>
+                                <li><a href="/home" className="menu">Profile</a></li>
+                                <li><a href="/home" className="menu">About</a></li>
                                 <li><a href="/home" className="menu">Contact</a></li>
                             </ul>
                         </div>
@@ -60,7 +60,7 @@ const Footer = () => {
                                 </p>
                             </div>
                             <div>
-                                <button className="btn btn-warning px-3 py-2">Subscribe</button>
+                                <button className="local-btn px-3 py-2">Subscribe</button>
                             </div>
                         </div>
                     </div>

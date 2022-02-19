@@ -9,4 +9,8 @@
     background-color: aliceblue;
     transform: scale(1.2s);
     transition: 1s;
+    border: none;
+}
+.bookIcon{
+    color: greenyellow;
 }

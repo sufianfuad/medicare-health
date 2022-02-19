@@ -21,7 +21,7 @@ const MyInfo = () => {
 
     return (
         <section className='myInfo-container'>
-            <h2 className='text-center m-2'>Hey! {user.displayName} Your <br /> Health Details Information <span className='contact-color'>Here.</span></h2>
+            <h2 className='text-center m-2'>Hey! <span className='text-primary'>{user.displayName}</span> Your <br /> Health Details Information <span className='contact-color'>Here.</span></h2>
             <div className="container">
                 <div className="row">
                     {

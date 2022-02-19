@@ -8,7 +8,7 @@ const SingleInfo = ({ info }) => {
 
     // const [info, setUserInfo] = useState({});
 
-    const { name, email, address, age, gender, fever, syndrome, waterIntake, oxygenLevel, phone, message } = info;
+    const { _id, name, email, address, age, gender, fever, syndrome, waterIntake, oxygenLevel, phone, message } = info;
 
     //DELETE Info
     const handleDeleteInfo = id => {
@@ -92,8 +92,8 @@ const SingleInfo = ({ info }) => {
                 <p>Details: {message}</p>
                 <div>
                     <button
-                        onClick={() => handleDeleteInfo(info._id)}
-                        className='btn btn-primary px-3 py-2'>
+                        onClick={() => handleDeleteInfo(_id)}
+                        className='fav-btn px-3 py-2'>
                         Delete
                     </button>
                 </div>

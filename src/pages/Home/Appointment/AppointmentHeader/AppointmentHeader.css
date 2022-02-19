@@ -3,3 +3,12 @@
     color: #F3F5F9;
     border-radius: 10px;
 }
+button.MuiButtonBase-root.MuiPickersDay-root.MuiPickersDay-dayWithMargin.css-bkrceb-MuiButtonBase-root-MuiPickersDay-root {
+    color: black;
+}
+button.MuiButtonBase-root.MuiPickersDay-root.MuiPickersDay-dayWithMargin.css-bkrceb-MuiButtonBase-root-MuiPickersDay-root:hover {
+    background-color: #1565c0;
+}
+span.MuiTypography-root.MuiTypography-caption.css-1w13o7u-MuiTypography-root {
+    color: aliceblue;
+}

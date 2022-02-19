@@ -4,14 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 //css
 import './TreatmentTable.css';
-const TableRow = ({ treatments, index }) => {
+const TreatmentTable = ({ treatments, index }) => {
 
     const { name, description, email, _id } = treatments;
     // react font awesome
     const dltIcon = <FontAwesomeIcon icon={faTrashAlt} />
 
-    //DELETE order
-    const handleDeleteProduct = (event, id) => {
+    //DELETE treatment
+    const handleDeleteTreatment = (event, id) => {
         const proceed = window.confirm('Are you sure, You want to delete Products')
         if (proceed) {
             const url = `http://localhost:7000/treatments/${id}`;
@@ -34,7 +34,7 @@ const TableRow = ({ treatments, index }) => {
             <td>{email}</td>
             <td>
                 <button
-                    onClick={(event) => handleDeleteProduct(event, _id)}
+                    onClick={(event) => handleDeleteTreatment(event, _id)}
                     className="btn-delete"
                 >
                     {/* <span className="icon px-1">Delete</span> */}
@@ -45,4 +45,4 @@ const TableRow = ({ treatments, index }) => {
     );
 };
 
-export default TableRow;
+export default TreatmentTable;

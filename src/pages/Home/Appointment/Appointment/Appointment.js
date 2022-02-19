@@ -1,11 +1,11 @@
 import React from 'react';
 import './Appointment.css';
 
-//image
-import img1 from '../../../../images/about/dp1.jpg';
-import img2 from '../../../../images/about/dp2.jpg';
-import img3 from '../../../../images/about/dp3.jpg';
-import img4 from '../../../../images/about/dp4.jpg';
+// //image
+// import img1 from '../../../../images/about/dp1.jpg';
+// import img2 from '../../../../images/about/dp2.jpg';
+// import img3 from '../../../../images/about/dp3.jpg';
+// import img4 from '../../../../images/about/dp4.jpg';
 import Footer from '../../../Shared/Footer/Footer';
 import AppointmentHeader from '../AppointmentHeader/AppointmentHeader';
 import AvailableAppointments from '../AvailableAppointments/AvailableAppointments';
@@ -16,11 +16,11 @@ const Appointment = () => {
     return (
         <>
             <Header></Header>
-            <AppointmentHeader date={date} setDate={setDate} />
-            <AvailableAppointments date={date} />
             <div className="appointment">
-                <div className="container">
-                    <div>
+                <AppointmentHeader date={date} setDate={setDate} />
+                <AvailableAppointments date={date} />
+                {/* <div className="container">
+                    <div className='mt-5'>
                         <h2 className="text-center fw-bold">Welcome to Appointment</h2>
                         <div className="row p-5">
                             <div className="col-lg-3 col-md-3 col-sm-6">
@@ -73,7 +73,7 @@ const Appointment = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <Footer />
