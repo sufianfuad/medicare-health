@@ -96,9 +96,9 @@ const Dashboard = () => {
                                         <li className="dashboard-menu mt-3">Add Doctor</li>
                                     </Link>
 
-                                    {/* <Link to={`${url}/manageTreatments`}>
+                                    <Link to={`${url}/manageTreatments`}>
                                         <li className="dashboard-menu mt-3">Manage Treatments</li>
-                                    </Link> */}
+                                    </Link>
 
                                     <Link to={`${url}/manageAppointments`}>
                                         <li className="dashboard-menu mt-3">Manage all Appointments</li>

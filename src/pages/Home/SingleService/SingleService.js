@@ -18,11 +18,8 @@ const SingleService = ({ service }) => {
                         <p><span className="text"><strong>About <small>{name}: </small></strong></span> {description}</p>
                     </div>
                     <Link to={`/sitbooking/${id}`}>
-                        <button className="btn px-3 py-2 details">Details</button>
+                        <button className="px-3 py-2 details">Details</button>
                     </Link>
-                    <div className="">
-
-                    </div>
                 </div>
             </div>
         </div>

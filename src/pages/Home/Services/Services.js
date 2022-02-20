@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
 import SingleService from '../SingleService/SingleService';
 
-import './services.css'
+import './services.css';
+
+//react font awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 const Services = () => {
     // use state
     //treatments k rendered kore UI tekhe
     const [services, setServices] = useState([]);
 
+    const loader = <FontAwesomeIcon icon={faSpinner} />
     // const [pageCount, setPageCount] = useState(0);
 
     // const [page, setPage] = useState(0)
@@ -24,34 +31,52 @@ const Services = () => {
             })
     }, [])
     return (
-        <div id="services" className="services-container">
-            <div className="text-center pb-3">
-                <div className="services-title">
-                    <h2>Our Services</h2>
+        <>
+            <Header />
+            <div id="services" className="services-container">
+                <div className="text-center pb-3">
+                    <div className="services-title">
+                        <h2>Our Services</h2>
+                    </div>
                 </div>
-            </div>
 
-            <div className="container">
-                <div className="row g-4">
-                    {
-                        services.map(service => <SingleService
-                            key={service.id}
-                            service={service}
-                        ></SingleService>)
-                    }
-                    <div className="pagination">
+                <div className="container">
+                    <div className="row g-4">
+                        {
+                            services.length === 0 ? (
+                                <div className='text-center mt-5'>
+                                    <span className='spinner'>{loader}</span>
+                                </div>
+                            )
+                                :
+                                (
+                                    services.map(service => <SingleService
+                                        key={service.id}
+                                        service={service}
+                                    ></SingleService>)
+                                )
+                        }
                         {/* {
+                            services.map(service => <SingleService
+                                key={service.id}
+                                service={service}
+                            ></SingleService>)
+                        } */}
+                        <div className="pagination">
+                            {/* {
                             [...Array(pageCount).keys()].map(number => <button
                                 className={number === page ? 'selected' : ''}
                                 key={number}
                                 onClick={() => setPage(number)}
                             >{number}</button>)
                         } */}
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
-        </div>
+            <Footer />
+        </>
     );
 };
 

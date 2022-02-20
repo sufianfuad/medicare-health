@@ -11,7 +11,7 @@ import './PrivateRoute.css';
 const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth();
     if (isLoading) {
-        return <div className="text-center loader">
+        return <div className="text-center spinner">
             <Spinner animation="border" />
         </div>
     }

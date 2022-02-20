@@ -35,6 +35,7 @@ const AddTreatments = () => {
     // };
     return (
         <>
+            <Header />
             <section className="addTreatments-container">
                 <h1 className="mb-3 text-center heading-title">Please Add Treatments<span className="dot-color">.</span></h1>
                 <div className="form-container container">
@@ -57,11 +58,11 @@ const AddTreatments = () => {
                     <div className="add-img">
                         {/* <img src={addProduct} alt="" /> */}
                     </div>
-
                 </div>
                 {/* </div>
             </div> */}
             </section>
+            <Footer />
         </>
     );
 };

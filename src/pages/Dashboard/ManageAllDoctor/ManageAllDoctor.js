@@ -2,17 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Spinner } from 'react-bootstrap';
 
 
-import './ManageAllDoctor.css';
 import ManageDoctors from './ManageDoctors/ManageDoctors';
+//react font awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+
+//CSS 
+import './ManageAllDoctor.css';
 
 const ManageAllDoctor = () => {
     const [allDoctors, setAllDoctor] = useState([]);
+    const loader = <FontAwesomeIcon icon={faSpinner} />
 
-    // const [doctorID, setDoctorId] = useState('');
-
-    // const handleDoctorId = id => {
-    //     setDoctorId(id)
-    // }
     useEffect(() => {
         fetch('http://localhost:7000/allDoctors')
             .then(res => res.json())
@@ -44,7 +45,8 @@ const ManageAllDoctor = () => {
 
                 <div className="row">
                     {allDoctors.length === 0 ? (
-                        <div className="text-center loader">
+                        <div className="text-center spinner mt-3">
+                            {/* <span>{loader}</span> */}
                             <Spinner animation="border" />
                         </div>
                     ) : (

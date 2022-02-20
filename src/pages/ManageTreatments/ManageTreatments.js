@@ -10,8 +10,32 @@ const ManageTreatments = () => {
     useEffect(() => {
         fetch('http://localhost:7000/treatments')
             .then(res => res.json())
-            .then(data => setManageTreatment(data.treatments))
+            .then(data => setManageTreatment(data))
     }, []);
+    //DELETE treatment
+    const handleDeleteTreatment = (e, id) => {
+        const proceed = window.confirm('Are you sure, You want to delete this services')
+        if (proceed) {
+            const url = `http://localhost:7000/treatments/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(result => {
+                    if (result.deletedCount > 0) {
+                        alert('Deleted Successfully')
+                        const remainTreatment = manageTreatment.filter(tm => tm._id !== id)
+                        setManageTreatment(remainTreatment)
+                    }
+                })
+            // .then((res) => res.json())
+            // .then((result) => {
+            //     if (result) {
+            //         e.target.parentNode.style.display = 'none';
+            //     }
+            // });
+        }
+    }
     return (
         <div className="ManageTreatments-container">
             <div className="container">
@@ -38,7 +62,12 @@ const ManageTreatments = () => {
                                 </tr>
                             ) : (
                                 manageTreatment.map((treatments, index) => (
-                                    <TreatmentTable index={index} key={treatments._id} treatments={treatments} />
+                                    <TreatmentTable
+                                        index={index}
+                                        key={treatments._id}
+                                        treatments={treatments}
+                                        handleDeleteTreatment={handleDeleteTreatment}
+                                    />
                                 ))
                             )}
                         </tbody>

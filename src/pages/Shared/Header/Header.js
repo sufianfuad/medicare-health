@@ -10,8 +10,10 @@ import menuLogo from '../../../images/logo.jpg'
 import './Header.css';
 
 
+
 const Header = () => {
     const { user, doctorRole, logOut } = useAuth();
+
     return (
         <>
             <Navbar className="navigation" collapseOnSelect expand="lg" sticky="top">
@@ -82,18 +84,6 @@ const Header = () => {
                             className="item"
                         >About</Nav.Link>
 
-                        {user?.email ?
-
-                            <button
-                                onClick={logOut}
-                                className="btn btn-secondary me-2">LogOut</button>
-
-                            : <Nav.Link
-                                as={Link}
-                                to="/login"
-                                className="item"
-                            >Login</Nav.Link>}
-
                         <Navbar.Text>
                             {/* {user?.email &&
                                 <span className="user">Signed in as <a href="#login">{user?.displayName}</a></span>
@@ -102,6 +92,18 @@ const Header = () => {
                                 <span className="profile-img"><img src={user?.photoURL} alt="" /></span>
                             }
                         </Navbar.Text>
+
+                        {user?.email ?
+
+                            <button
+                                onClick={logOut}
+                                className="btn btn-secondary ms-2">LogOut</button>
+
+                            : <Nav.Link
+                                as={Link}
+                                to="/login"
+                                className="item"
+                            >Login</Nav.Link>}
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

@@ -43,7 +43,7 @@
     outline: none;
     border: none;
     padding: 10px 17px;
-    color: black;
+    color: #fff;
     font-weight: 600;
     font-size: 18px;
     text-transform: uppercase;
@@ -75,4 +75,9 @@
 .fav-icon:hover{
     color: #bb1f1f;
     font-size: 18px;
+}
+.spinner{
+    font-size: 30px;
+    color: #0d2546;
+    font-weight: inherit;
 }

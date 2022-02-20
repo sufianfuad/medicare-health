@@ -12,9 +12,9 @@ const ManageDoctors = ({ doctor, handleDeleteDoctor }) => {
     // react font awesome
     const dltDoctor = <FontAwesomeIcon icon={faTrashAlt} />
     const addFav = <FontAwesomeIcon icon={faHeart} />
+
     return (
         <section className='col-lg-6 col-md-6 col-12'>
-
             <div className="doctorCard">
                 <div >
                     <h3><span className='dr-color'>Name: </span> {doctor?.doctorName}</h3>

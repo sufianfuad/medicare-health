@@ -13,19 +13,19 @@ import './Home.css';
 
 const Home = () => {
 
-    // const [homeService, setHomeService] = useState([]);
+    const [homeService, setHomeService] = useState([]);
 
-    // useEffect(() => {
-    //     fetch('http://localhost:7000/treatments')
-    //         .then(res => res.json())
-    //         .then(data => setHomeService(data))
-    // }, [])
+    useEffect(() => {
+        fetch('http://localhost:7000/treatments')
+            .then(res => res.json())
+            .then(data => setHomeService(data))
+    }, [])
 
     return (
         <div id="home">
             <Header></Header>
             <Banner></Banner>
-            {/* <div className="home-container container">
+            <div className="home-container container">
                 <div className="row ">
                     <div className="text-center pb-3">
                         <div className="services-title">
@@ -57,7 +57,7 @@ const Home = () => {
                         )
                     }
                 </div>
-            </div> */}
+            </div>
             {/* <Services></Services> */}
             <Sanitizer></Sanitizer>
             <Doctors></Doctors>

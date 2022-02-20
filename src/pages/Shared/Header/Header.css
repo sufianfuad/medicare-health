@@ -11,7 +11,9 @@
 }
 .title-color{
     /* color: #1c44a8; */
-    color: #132031;
+    /* color: #132031; */
+    /* color: #53cc07; */
+    color: #172a35;
     /* color: #2952AE; */
     /* color: #2382C4; */
 }
@@ -43,4 +45,9 @@
     border-radius: 50%;
     border:2px solid black;
     background-color: gray;
+}
+.logOutIcon{
+    font-size: 30px;
+    border: none;
+    border-radius: 50%;
 }
