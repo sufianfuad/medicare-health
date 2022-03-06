@@ -24,6 +24,7 @@ const Review = () => {
 
     return (
         <>
+            {/* Review part */}
             <div className="reviews-container">
                 <Container>
                     <Typography variant='h4' sx={{

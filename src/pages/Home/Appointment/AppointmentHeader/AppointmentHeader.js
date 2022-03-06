@@ -12,6 +12,7 @@ const AppointmentHeader = ({ todayDates, setTodayDates }) => {
             <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
                     <Box className='calender__bg' sx={{ py: 5 }}>
+                        {/* ai part a calendar show kore */}
                         <Calendar
                             todayDates={todayDates}
                             setTodayDates={setTodayDates}
@@ -19,6 +20,7 @@ const AppointmentHeader = ({ todayDates, setTodayDates }) => {
                         ></Calendar>
                     </Box>
                 </Grid>
+                {/* ai part a picture show kore */}
                 <Grid item xs={12} md={6}>
                     <div className='py-5'>
                         <img style={{ width: "100%" }} src={chair} alt="chair" />

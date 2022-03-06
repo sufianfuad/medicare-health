@@ -44,7 +44,7 @@ const BookingModal = ({ booking, openBooking, handleBookingClose, todayDates, se
 
     const handleBookingSubmit = e => {
         e.preventDefault();
-        //data collect
+        //data collect kore rakchi
         const appointment = {
             ...bookingInfo,
             time,

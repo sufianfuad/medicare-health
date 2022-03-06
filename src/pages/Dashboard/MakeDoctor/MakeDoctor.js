@@ -41,7 +41,7 @@ const MakeDoctor = () => {
     };
     return (
         <div className="makeAdmin-container">
-            <h4 className="text-center text">Make Doctor</h4>
+            <h4 className="text-center makeAdmin">Make Doctor</h4>
             <div className="form-area mt-5">
                 <div className="form-container container">
                     <form onSubmit={handleSubmit(onSubmit)}>
@@ -49,7 +49,7 @@ const MakeDoctor = () => {
                             {...register("Email")}
                             onBlur={handleOnBlur}
                             placeholder="example@gmail.com"
-                            className="p-2 m-2 w-50 inputs-field"
+                            className="text-center p-2 m-2 w-100 inputs-field"
                         />
                         {/*  */}
                         {errors.exampleRequired && <span>This field is required</span>}
@@ -57,7 +57,7 @@ const MakeDoctor = () => {
                         <input
                             type="submit"
                             value="Make as Doctor"
-                            className="btn add-btn w-50 px-3 py-2"
+                            className="addBtn w-50 px-3 py-2"
                         />
                     </form>
                     {

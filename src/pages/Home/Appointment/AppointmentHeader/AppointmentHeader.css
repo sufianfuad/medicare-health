@@ -1,5 +1,6 @@
 .calender__bg.MuiBox-root.css-1kgakwq .css-1snvurg-MuiPickerStaticWrapper-root {
-    background-color: rgb(206, 193, 219);
+    /* background-color: rgb(206, 193, 219); */
+    background-color:#bbdefb;
     color: #F3F5F9;
     border-radius: 10px;
 }
@@ -10,5 +11,6 @@ button.MuiButtonBase-root.MuiPickersDay-root.MuiPickersDay-dayWithMargin.css-bkr
     background-color: #1565c0;
 }
 span.MuiTypography-root.MuiTypography-caption.css-1w13o7u-MuiTypography-root {
-    color: aliceblue;
+    /* color: aliceblue; */
+    color: black;
 }

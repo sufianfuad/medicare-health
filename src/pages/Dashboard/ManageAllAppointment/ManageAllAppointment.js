@@ -12,7 +12,24 @@ const ManageAllAppointment = () => {
                 setAllAppointments(data)
             })
     }, []);
-    //DELETE APPOINTMENT
+    //DELETE Single APPOINTMENT
+    const handleDeleteAppointment = id => {
+        const proceed = window.confirm('Are you sure, want to delete this profile')
+        if (proceed) {
+            const url = `http://localhost:7000/appointments/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('Deleted Successfully')
+                        const remainingAppointment = allAppointments.filter(ap => ap._id !== id);
+                        setAllAppointments(remainingAppointment);
+                    }
+                });
+        }
+    }
     return (
         <div className='ManageTreatments-container'>
             <div className="container">
@@ -28,8 +45,8 @@ const ManageAllAppointment = () => {
                                 <th>TreatMent Service</th>
                                 <th>Email</th>
                                 <th>Time</th>
-                                <th>Action</th>
                                 <th>Status</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,6 +63,7 @@ const ManageAllAppointment = () => {
                                             index={index}
                                             key={allAppointment._id}
                                             allAppointment={allAppointment}
+                                            handleDeleteAppointment={handleDeleteAppointment}
                                         >
 
                                         </AllAppointments>

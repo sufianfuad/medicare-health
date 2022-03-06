@@ -18,7 +18,7 @@ const MyInfo = () => {
             })
     }, [user?.email]);
 
-    //Delete 
+    //Delete Single Profile Data
     const handleDeleteInfo = id => {
         const proceed = window.confirm('Are you sure, want to delete this profile')
         if (proceed) {

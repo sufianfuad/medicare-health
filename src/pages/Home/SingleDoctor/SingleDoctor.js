@@ -25,7 +25,6 @@ const SingleDoctor = ({ doctor }) => {
                             <h4><span className="service-title fw-bold">{doctorName}</span></h4>
                             <p><span className="centerIconColor"><strong>Email: <small>{doctorEmail}</small></strong></span></p>
                             <p className='fw-bold p-color'>Contact No: 0199999999</p>
-                            {/* <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p> */}
                             <Link to="/appointment">
                                 <button className="appointment-btn mb-2"><span className='appointment-icon'>{appointment}</span> Take Appointment</button>
                             </Link>

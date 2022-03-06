@@ -32,11 +32,14 @@ const AddTreatments = () => {
                         <textarea {...register("description")} placeholder="description" />
 
                         <input type="text" {...register("deptHead")} placeholder="Dept Head Name" />
-                        <input type="text" {...register("email")} placeholder="department email" />
+
+                        <input type="email" {...register("email", { required: true })} placeholder="department email" />
 
                         <input {...register("img")} placeholder="paste img url from image.js file" />
 
-                        <input type="submit" />
+                        <input
+                            className='addTreatBtn'
+                            type="submit" />
                     </form>
                 </div>
 

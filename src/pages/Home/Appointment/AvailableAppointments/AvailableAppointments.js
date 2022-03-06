@@ -55,6 +55,7 @@ const bookings = [
 ]
 
 const AvailableAppointments = ({ todayDates }) => {
+    //Success Status state
     const [appointmentSuccess, setAppointmentSuccess] = useState(false);
 
     return (

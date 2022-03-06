@@ -5,17 +5,7 @@ import { useForm } from 'react-hook-form';
 import './AddTestCenter.css';
 
 const AddTestCenter = () => {
-    // const { register, handleSubmit, reset } = useForm();
-    // const onSubmit = data => {
-    //     console.log(data);
-    //     axios.post('http://localhost:7000/testcenter', data)
-    //         .then(res => {
-    //             if (res.data.insertedId) {
-    //                 alert('Successfully Added');
-    //                 reset();
-    //             }
-    //         })
-    // };
+    //React Hook Form er property
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
@@ -36,9 +26,10 @@ const AddTestCenter = () => {
                 <Container className="form-container">
                     <h2 className='text-center'>Add a Test Center</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
+
                         <input {...register("name", { maxLength: 70 })} placeholder="Center Name" />
 
-                        <input type="number" {...register("number")} placeholder="Contact Number" />
+                        <input type="number" {...register("number", { required: true })} placeholder="Contact Number" />
 
                         <input type="number" {...register("cost")} placeholder="Cost" />
 
@@ -46,7 +37,7 @@ const AddTestCenter = () => {
                         <input type="text" {...register("address", { max: 5 })} placeholder="Address" />
                         <input {...register("image")} placeholder="image url" />
 
-                        <button className="test-btn" type="submit">Submit</button>
+                        <button className="testBtn" type="submit">Submit</button>
                     </form>
                 </Container>
             </div>

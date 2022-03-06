@@ -27,9 +27,6 @@ const Profile = () => {
 
 
     const { register, handleSubmit, control, formState: { errors }, reset } = useForm();
-    // const onSubmit = data => {
-    //     console.log(data)
-    // };
 
     const onSubmit = data => {
         console.log(data)
@@ -57,18 +54,16 @@ const Profile = () => {
                                 className='text-white fw-bold pt-2'
                             >Email</label>
                             <input
+                                type="email"
                                 defaultValue={user.email}
                                 {...register("email", { required: true })} />
 
                             {/* errors will return when field validation fails  */}
                             {errors.email && <span className='error'>This field is required</span>}
 
-                            {/* <input type="number" {...register("age", { min: 18, max: 99 })} /> */}
                             <label className='text-white fw-bold pt-2'>Address</label>
                             <input defaultValue="" {...register("address")} placeholder='Your Address' />
 
-                            {/* <Select label="Age" {...register("Age")} /> */}
-                            {/* <input defaultValue="syndrome" {...register("example")} /> */}
                             <div className='d-flex align-items-center'>
                                 <label className='text-white fw-bold me-2 pt-2'>Age</label>
                                 <input type="number" {...register("age", { min: 18, max: 99 })} />
@@ -79,7 +74,7 @@ const Profile = () => {
                                 </select>
                             </div>
                             <label className='text-white fw-bold pt-2'>Fever</label>
-                            <input type="number" {...register('fever')} />
+                            <input type="number" {...register('fever', { required: true })} />
 
                             <label className='text-white fw-bold pt-2'>Syndrome</label>
                             <Controller
@@ -96,13 +91,13 @@ const Profile = () => {
                                         options={[
                                             { value: "Headache", label: "Headache" },
                                             { value: "Tiredness", label: "Tiredness" },
-                                            { value: "nausea", label: "Nausea" },
-                                            { value: "Backache", label: "Backache" },
-                                            { value: "Fatigue", label: "Fatigue" },
-                                            { value: "Bloating", label: "Bloating" },
-                                            { value: "Insomnia", label: "Insomnia" },
-                                            { value: "Constipation", label: "Constipation" },
+                                            { value: "Nausea", label: "Nausea" },
+                                            { value: "ChestPain", label: "ChestPain" },
                                             { value: "Diarrhea", label: "Diarrhea" },
+                                            { value: "Cough", label: "Cough" },
+                                            { value: "Bloating", label: "Bloating" },
+                                            { value: "Constipation", label: "Constipation" },
+                                            { value: "Diabetes", label: "Diabetes" },
                                             { value: "Swelling", label: "Swelling" },
                                         ]}
                                     />

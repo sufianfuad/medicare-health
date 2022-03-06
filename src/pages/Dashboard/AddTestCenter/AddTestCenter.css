@@ -3,6 +3,7 @@
 }
 .form-container input{
     border: 2px solid black;
+    width: 100%;
 }
 .form-container{
     width: 550px !important;
@@ -16,14 +17,24 @@
     font-weight: 500;
 }
 
-.test-btn{
-    background: #fd746c;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ff9068, #fd746c);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ff9068, #fd746c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    font-weight: 500;
-    border: 2px solid black;
-    color: black;
-    padding: 7px 15px;
-   
-
+.testBtn{
+    outline: none;
+    border: none;
+    padding: 8px 12px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 7px;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 7px 0 #3d3137;
+    top: 0;
+    background-image: linear-gradient(90deg, #5f9dee, #1c6dd6);
+    margin-top: 30px;
+}
+.testBtn{
+    top: 5px;
+    box-shadow: 0 2px #3d3137;
+    border-bottom: 1px solid #f0f0f0;
 }

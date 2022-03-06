@@ -1,0 +1,8 @@
+.due{
+    color: goldenrod;
+    font-weight: bold;
+}
+.paid{
+    color: green;
+    font-weight: bold;
+}

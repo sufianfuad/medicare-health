@@ -17,7 +17,7 @@ import StarIcon from '@mui/icons-material/Star';
 
 //react font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowCircleRight, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 
 //CSS
@@ -30,6 +30,9 @@ const Home = () => {
 
     // react font awesome
     const rightArow = <FontAwesomeIcon icon={faArrowCircleRight} />
+    //loading er jonno
+    const loader = <FontAwesomeIcon icon={faSpinner} />
+
     const labels = {
         1: 'Useless',
         2: 'Poor',
@@ -37,13 +40,13 @@ const Home = () => {
         4: 'Good',
         5: 'Excellent',
     };
-    //For Service
+    // Service er jonno
     useEffect(() => {
         fetch('http://localhost:7000/treatments')
             .then(res => res.json())
             .then(data => setHomeService(data))
     }, []);
-    //For Review
+    //Review  er jonno
     useEffect(() => {
         fetch('http://localhost:7000/reviews')
             .then(res => res.json())
@@ -63,32 +66,42 @@ const Home = () => {
                             <h2>Our Services</h2>
                         </div>
                     </div>
+                    {/* Home a server tekhe 3 ta services show er kaj */}
                     {
-                        homeService.slice(0, 3).map(
-                            service =>
-                                <div className="col-lg-4 col-md-4 col-12">
-                                    <div className="service-card">
-                                        <div className="p-3">
-                                            <div className="service-img">
-                                                <img className='img-fluid' src={service?.img} alt="" />
-                                            </div>
-                                            <div className="service-info pt-3">
-                                                <h4><span className="service-title fw-bold">{service?.name}</span></h4>
-                                                <p>{service.deptHead}</p>
-                                                <p><span className="text"><strong>About <small>{service?.name}: </small></strong></span> {service?.description.slice(0, 130)}</p>
-                                            </div>
-                                            <Link to={`/sitbooking/${service?.id}`}>
-                                                <button className="btn px-3 py-2 details">Details</button>
-                                            </Link>
-                                            <div className="">
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
+                        homeService.length === 0 ? (
+                            <div className='text-center mt-5'>
+                                <span className='spinner'>{loader}</span>
+                            </div>
                         )
+                            :
+                            (
+                                homeService.slice(0, 3).map(
+                                    service =>
+                                        <div className="col-lg-4 col-md-4 col-12">
+                                            <div className="service-card">
+                                                <div className="p-3">
+                                                    <div className="service-img">
+                                                        <img className='img-fluid' src={service?.img} alt="" />
+                                                    </div>
+                                                    <div className="service-info pt-3">
+                                                        <h4><span className="service-title fw-bold">{service?.name}</span></h4>
+                                                        <p>{service.deptHead}</p>
+                                                        <p><span className="text"><strong>About <small>{service?.name}: </small></strong></span> {service?.description.slice(0, 130)}</p>
+                                                    </div>
+                                                    <Link to={`/sitbooking/${service?.id}`}>
+                                                        <button className="btn px-3 py-2 details">Details</button>
+                                                    </Link>
+                                                    <div className="">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                )
+                            )
                     }
+
                     <div className='text-center mt-3'>
                         <Link to="/services">
                             <button className='view-btn'>View More <span>{rightArow}</span> </button>
@@ -101,6 +114,7 @@ const Home = () => {
             <Sanitizer></Sanitizer>
             <TestCenter></TestCenter>
             <Doctors></Doctors>
+            {/* Home a server tekhe 3 ta Review show er kaj */}
             <div className="reviews-container">
                 <Container>
                     <Typography variant='h4' sx={{

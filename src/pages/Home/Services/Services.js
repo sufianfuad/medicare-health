@@ -15,19 +15,12 @@ const Services = () => {
     const [services, setServices] = useState([]);
 
     const loader = <FontAwesomeIcon icon={faSpinner} />
-    // const [pageCount, setPageCount] = useState(0);
-
-    // const [page, setPage] = useState(0)
-    // const size = 10;
 
     useEffect(() => {
         fetch('http://localhost:7000/treatments')
             .then(res => res.json())
             .then(data => {
                 setServices(data);
-                // const count = data.count;
-                // const pageNumber = Math.ceil(count / size);
-                // setPageCount(pageNumber)
             })
     }, [])
     return (
@@ -56,16 +49,6 @@ const Services = () => {
                                     ></SingleService>)
                                 )
                         }
-
-                        <div className="pagination">
-                            {/* {
-                            [...Array(pageCount).keys()].map(number => <button
-                                className={number === page ? 'selected' : ''}
-                                key={number}
-                                onClick={() => setPage(number)}
-                            >{number}</button>)
-                        } */}
-                        </div>
                     </div>
 
                 </div>

@@ -34,7 +34,7 @@ const About = () => {
                             </div>
                         </div>
                         {/* patient review  */}
-                        <div className="row p-5 mt-5">
+                        {/* <div className="row p-5 mt-5">
                             <div className="text-center pb-3">
                                 <div className="services-title">
                                     <h2>Patient Review</h2>
@@ -72,7 +72,7 @@ const About = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <Review></Review>
                     </div>
                 </div>

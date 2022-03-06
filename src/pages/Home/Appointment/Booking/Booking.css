@@ -1,8 +1,11 @@
 .MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation3.css-87ir2a-MuiPaper-root {
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
     /* background-color: #F6D4E6; */
     /* background-color: #FDF2F8; */
     /* background-color: #374151; */
+    /* background-color: #577BC1; */
+    /* background-color: #64b5f6; */
+    background-color: #4db6ac;
     transition: 0.5s;
 }
 .MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation3.css-87ir2a-MuiPaper-root:hover {
@@ -13,4 +16,7 @@
 }
 .bookIcon{
     color: greenyellow;
+}
+.PrivatePickersFadeTransitionGroup-root.css-1bx5ylf {
+    color: black;
 }

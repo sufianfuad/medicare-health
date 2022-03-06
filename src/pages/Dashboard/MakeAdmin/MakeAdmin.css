@@ -7,11 +7,35 @@
     font-weight: bold;
 }
 .form-area{
-   margin-left:  100px;
+   /* margin-left:  100px; */
 }
 .inputs-field{
     border: none;
 }
 .add-btn{
     background-color: firebrick;
+}
+.makeAdmin{
+    color: #0277bd;
+}
+.addBtn{
+    outline: none;
+    border: none;
+    padding: 8px 12px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 7px;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 7px 0 #b6889f;
+    top: 0;
+    background-image: linear-gradient(90deg, #5f9dee, #275188);
+    margin-top: 30px;
+}
+.addBtn:active{
+    top: 5px;
+    box-shadow: 0 2px #b6889f;
+    border-bottom: 1px solid #f0f0f0;
 }

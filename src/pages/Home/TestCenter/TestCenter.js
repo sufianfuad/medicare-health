@@ -5,8 +5,16 @@ import SingleTestCenter from '../SingleTestCenter/SingleTestCenter';
 //CSS
 import './TestCenter.css';
 
+//react font awesome LINK
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+
 const TestCenter = () => {
+    //test Center state 
     const [testCenters, setTestCenters] = useState([]);
+
+    //loading er jonno
+    const loader = <FontAwesomeIcon icon={faSpinner} />
 
     useEffect(() => {
         fetch('http://localhost:7000/test_center',)
@@ -23,13 +31,20 @@ const TestCenter = () => {
             <div className="container mt-5">
                 <div className="row centers-details d-flex align-items-center justify-content-center">
                     {
-                        testCenters?.map(center =>
-                            <SingleTestCenter
-                                key={center._id}
-                                center={center}
-                            >
-                            </SingleTestCenter>
-                        )
+                        testCenters.length === 0 ? (
+                            <div className='text-center mt-5'>
+                                <span className='spinner'>{loader}</span>
+                            </div>
+                        ) :
+                            (
+                                testCenters?.map(center =>
+                                    <SingleTestCenter
+                                        key={center._id}
+                                        center={center}
+                                    >
+                                    </SingleTestCenter>
+                                )
+                            )
                     }
                 </div>
             </div>

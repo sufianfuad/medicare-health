@@ -127,7 +127,7 @@ const Dashboard = () => {
                                 </div>
                             }
 
-                            {doctor?.email && doctorRole ?
+                            {/* {doctor?.email && doctorRole ?
                                 <div>
                                     <Link to="/">
                                         <button className="btn-visit-front">Visit Site</button>
@@ -138,7 +138,7 @@ const Dashboard = () => {
                                         <li className="dashboard-menu mt-3">Manage all Doctors</li>
                                     </Link>
                                 </div>
-                            }
+                            } */}
                             <Link to={`${url}/logout`}>
                                 <li
                                     onClick={logOut}

@@ -35,8 +35,6 @@ function App() {
 
       <AuthProvider>
         <Router>
-          {/* Header route  */}
-          {/* <Header></Header> */}
 
           <Switch>
 
@@ -54,7 +52,7 @@ function App() {
               <Profile></Profile>
             </PrivateRoute>
 
-            <PrivateRoute path="/sitbooking/:bookingId">
+            <PrivateRoute exact path="/sitbooking/:bookingId">
               <SitBooking></SitBooking>
             </PrivateRoute>
 
@@ -96,8 +94,7 @@ function App() {
             </Route>
 
           </Switch>
-          {/* footer route */}
-          {/* <Footer></Footer> */}
+
         </Router>
       </AuthProvider>
 

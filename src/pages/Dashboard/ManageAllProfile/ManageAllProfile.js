@@ -11,6 +11,7 @@ const ManageAllProfile = () => {
             .then(data => setAllProfiles(data))
     }, []);
 
+    // DELETE API korchi single profile data delete er jonno
     const handleDeleteProfile = id => {
         const proceed = window.confirm('Are you sure, want to delete this profile')
         if (proceed) {

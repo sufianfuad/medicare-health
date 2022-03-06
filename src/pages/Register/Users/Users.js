@@ -4,7 +4,10 @@ import { Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+//Image file
+import loginBanner from '../../../images/login-banner/loginBanner.jpg';
 
+//CSS
 import './Users.css';
 
 const Users = () => {
@@ -36,7 +39,7 @@ const Users = () => {
                     <div className="row pt-3 d-flex align-items-center">
                         <div className="col-lg-6 col-md-6 col-12">
                             <div className="register-banner">
-                                {/* <img className="img-fluid" src={loginBanner} alt="" /> */}
+                                <img className="img-fluid" src={loginBanner} alt="" />
                             </div>
                         </div>
                         <div className="col-lg-6 col-md-6 col-12">
