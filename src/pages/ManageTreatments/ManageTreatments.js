@@ -50,13 +50,13 @@ const ManageTreatments = () => {
                                 <th>Treatment Name</th>
                                 <th>Treatment Text</th>
                                 <th>Treatment Email</th>
-                                <th>Action</th>
+                                <th>Action Delete</th>
                             </tr>
                         </thead>
                         <tbody>
                             {manageTreatment.length === 0 ? (
                                 <tr>
-                                    <td className="text-center" colSpan="5">
+                                    <td className="text-center loading-color" colSpan="5">
                                         Loading...
                                     </td>
                                 </tr>

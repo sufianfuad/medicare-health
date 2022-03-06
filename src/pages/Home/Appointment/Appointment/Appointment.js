@@ -12,13 +12,16 @@ import AvailableAppointments from '../AvailableAppointments/AvailableAppointment
 import Header from '../../../Shared/Header/Header';
 
 const Appointment = () => {
-    const [date, setDate] = React.useState(new Date());
+    const [todayDates, setTodayDates] = React.useState(new Date());
     return (
         <>
             <Header></Header>
             <div className="appointment">
-                <AppointmentHeader date={date} setDate={setDate} />
-                <AvailableAppointments date={date} />
+                <AppointmentHeader
+                    todayDates={todayDates}
+                    setTodayDates={setTodayDates}
+                />
+                <AvailableAppointments todayDates={todayDates} />
                 {/* <div className="container">
                     <div className='mt-5'>
                         <h2 className="text-center fw-bold">Welcome to Appointment</h2>

@@ -5,14 +5,17 @@ import chair from '../../../../images/chair.png';
 import Calendar from '../../../Shared/Calendar/Calendar';
 import './AppointmentHeader.css';
 
-const AppointmentHeader = ({ date, setDate }) => {
+const AppointmentHeader = ({ todayDates, setTodayDates }) => {
 
     return (
         <Container>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
                     <Box className='calender__bg' sx={{ py: 5 }}>
-                        <Calendar date={date} setDate={setDate}
+                        <Calendar
+                            todayDates={todayDates}
+                            setTodayDates={setTodayDates}
+                        // date={date} setDate={setDate}
                         ></Calendar>
                     </Box>
                 </Grid>

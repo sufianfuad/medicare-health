@@ -1,0 +1,29 @@
+.testCenter-container{
+    padding: 50px 0;
+}
+.form-container input{
+    border: 2px solid black;
+}
+.form-container{
+    width: 550px !important;
+    border: 3px solid  black;
+    background: #1e3c72;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2a5298, #1e3c72); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.form-container h2{
+    color: white;
+    font-weight: 500;
+}
+
+.test-btn{
+    background: #fd746c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff9068, #fd746c);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff9068, #fd746c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-weight: 500;
+    border: 2px solid black;
+    color: black;
+    padding: 7px 15px;
+   
+
+}

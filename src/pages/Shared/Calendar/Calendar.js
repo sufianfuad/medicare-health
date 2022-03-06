@@ -5,15 +5,15 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import StaticDatePicker from '@mui/lab/StaticDatePicker';
 
-const Calendar = ({ date, setDate }) => {
+const Calendar = ({ todayDates, setTodayDates }) => {
 
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
             <StaticDatePicker
                 displayStaticWrapperAs="desktop"
-                value={date}
+                value={todayDates}
                 onChange={(newValue) => {
-                    setDate(newValue);
+                    setTodayDates(newValue);
                 }}
                 renderInput={(params) => <TextField {...params} />}
             />

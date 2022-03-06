@@ -17,7 +17,7 @@ const Sanitizer = () => {
                     <div className="services-title">
                         <h1 className="sanitizeFont text-center">Use Sanitizer</h1>
                     </div>
-                    <p className='p-3'>Handwashing is one of the best ways to protect yourself and your family from getting sick. Learn when and how you should wash your hands to stay healthy.</p>
+                    <p className='p-3'>Hand washing is one of the best ways to protect yourself and your family from getting sick. Learn when and how you should wash your hands to stay healthy.</p>
                 </div>
                 <div className="mt-5">
                     <Row className="d-flex justify-content-center align-items-center">
@@ -29,7 +29,7 @@ const Sanitizer = () => {
                             <div className="process">
                                 <img src={handWash} alt="" className="imgHand" />
                                 <h5>Apply Alcohol Spray</h5>
-                                <p>Alcohol-based hand sanitisers can rapidly decrease the number of microorganisms on hands in certain circumstances, yet sanitisers do not kill a wide range of germs. Soap and water are more powerful than hand sanitisers at expelling particular sorts of germs, such as Cryptosporidium, norovirus, and Clostridium difficile.</p>
+                                <p>Alcohol-based hand sanitizers can rapidly decrease the number of microorganisms on hands in certain circumstances, yet sanitizers do not kill a wide range of germs. Soap and water are more powerful than hand sanitizers at expelling particular sorts of germs, such as Cryptosporidium, norovirus, and Clostridium difficile.</p>
                                 <img src={handRub} alt="" className="imgHand mt-2" />
                                 <h5>Rub Hands Together</h5>
                                 <p>Apply the gel product to the palm of one hand (read the label to learn the correct amount). Rub your hands together. Rub the gel over all the surfaces of your hands and fingers until your hands are dry. This should take around 20 seconds.

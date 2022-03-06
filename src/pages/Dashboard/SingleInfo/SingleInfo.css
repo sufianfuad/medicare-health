@@ -2,12 +2,37 @@
     text-align: left;
     margin-left: 30px;
     margin-top: 30px;
-    width: 550px;
+    width: 520px;
     padding: 30px;
-    background-color: thistle;
-    box-shadow: 10px 10px 5px 5px;
+    color: #fff;
+    /* background-color: thistle; */
+    /* background-color: #04293A; */
+    /* background-color: #064663; */
+    /* background-color: #00B4D8; */
+    background-color: #1C658C;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
     border-radius: 7px;
     border: 1px solid #2D0A4C;
     /* background-color: #2D0A4C;
     background-color: #27004C; */
+}
+.singeInfo-card h5 ,h6{
+    /* color: #03045E; */
+    color: #EEEEEE;
+    font-weight: 500;
+    font-size: 18px;
+}
+.singeInfo-card p{
+    color: #EEEEEE;
+}
+.profileImg img{
+    width: 50px;
+    border-radius: 50%;
+}
+.profileImg2 img{
+    width: 40px;
+    border-radius: 50%;
+}
+.textColor{
+    color: #D8D2CB;
 }

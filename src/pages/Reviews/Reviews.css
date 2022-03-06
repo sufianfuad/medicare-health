@@ -1,0 +1,19 @@
+.feedback form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+.feedback form input{
+    width: 50%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 25px;
+}
+.feedback form textarea{
+    width: 50%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 25px;
+}

@@ -23,11 +23,11 @@ const SingleDoctor = ({ doctor }) => {
                         </div>
                         <div className="doctor-info pt-3">
                             <h4><span className="service-title fw-bold">{doctorName}</span></h4>
-                            <p><span className="text"><strong>Email: <small>{doctorEmail}</small></strong></span></p>
-                            <p>Contact No: 0199999999</p>
+                            <p><span className="centerIconColor"><strong>Email: <small>{doctorEmail}</small></strong></span></p>
+                            <p className='fw-bold p-color'>Contact No: 0199999999</p>
                             {/* <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p> */}
                             <Link to="/appointment">
-                                <button className="btn btn-primary mb-2 px-3 py-2"><span className='appointment-icon'>{appointment}</span> Take Appointment</button>
+                                <button className="appointment-btn mb-2"><span className='appointment-icon'>{appointment}</span> Take Appointment</button>
                             </Link>
                         </div>
 

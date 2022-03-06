@@ -9,6 +9,9 @@ import Backdrop from '@mui/material/Backdrop';
 import './BookingModal.css';
 
 import useAuth from '../../../../hooks/useAuth';
+// sweet Alert
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 const style = {
     position: 'absolute',
@@ -21,8 +24,8 @@ const style = {
     boxShadow: 24,
     p: 4,
 };
-const BookingModal = ({ booking, openBooking, handleBookingClose, date }) => {
-    const { name, doctor, time } = booking;
+const BookingModal = ({ booking, openBooking, handleBookingClose, todayDates, setAppointmentSuccess, appointmentSuccess }) => {
+    const { name, doctor, time, price } = booking;
 
     const { user } = useAuth();
 
@@ -45,13 +48,30 @@ const BookingModal = ({ booking, openBooking, handleBookingClose, date }) => {
         const appointment = {
             ...bookingInfo,
             time,
+            price,
             serviceName: name,
-            todayDates: date.toDateString()
+            todayDates: todayDates.toDateString()
         }
-        console.log(appointment);
-        // console.log(bookingInfo);
-        // handleBookingClose();
+        // console.log(appointment);
 
+        // data Server a Send korchi
+        fetch('http://localhost:7000/appointments', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(appointment)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+                if (data.insertedId) {
+                    { appointmentSuccess && Swal.fire(`${user?.displayName} Appointment Booked successfully`) }
+                    setAppointmentSuccess(true);
+                    handleBookingClose();
+
+                }
+            })
     }
     return (
         <Modal
@@ -85,7 +105,7 @@ const BookingModal = ({ booking, openBooking, handleBookingClose, date }) => {
                             disabled
                             label="Date"
                             id="outlined-size-small"
-                            defaultValue={date.toDateString()}
+                            defaultValue={todayDates.toDateString()}
                             size="small"
                             sx={{ width: '90%', m: 1, p: 1 }}
                         />

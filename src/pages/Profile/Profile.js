@@ -18,6 +18,7 @@ import { Checkbox } from '@mui/material';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content'
 
+
 const Profile = () => {
 
     // const [info, setInfo] = useState({});
@@ -48,18 +49,23 @@ const Profile = () => {
                 <h2 className='text-center fw-bold'>{user.displayName} <span className='heading-color'>!</span> Profile Information</h2>
                 <div className='container'>
                     <div className='shadow p-3 profile-card'>
+                        {/* Profile From */}
                         <form className='profile-form' onSubmit={handleSubmit(onSubmit)}>
                             <label className='text-white fw-bold'>Name</label>
                             <input defaultValue={user.displayName} {...register("name", { required: true, maxLength: 20 })} />
-                            <label className='text-white fw-bold pt-2'>Email</label>
-                            <input defaultValue={user.email} {...register("email", { required: true })} />
+                            <label
+                                className='text-white fw-bold pt-2'
+                            >Email</label>
+                            <input
+                                defaultValue={user.email}
+                                {...register("email", { required: true })} />
 
                             {/* errors will return when field validation fails  */}
                             {errors.email && <span className='error'>This field is required</span>}
 
                             {/* <input type="number" {...register("age", { min: 18, max: 99 })} /> */}
                             <label className='text-white fw-bold pt-2'>Address</label>
-                            <input defaultValue="" {...register("address")} placeholder='your address' />
+                            <input defaultValue="" {...register("address")} placeholder='Your Address' />
 
                             {/* <Select label="Age" {...register("Age")} /> */}
                             {/* <input defaultValue="syndrome" {...register("example")} /> */}
@@ -122,7 +128,7 @@ const Profile = () => {
                             <input
                                 defaultValue=""
                                 type="number" {...register("phone")} placeholder="Your phone number" />
-                            <textarea defaultValue="" {...register("message")} placeholder='say something' />
+                            <textarea defaultValue="" {...register("message")} placeholder='Additional Symptom?' />
                             <input type="submit" className='submitBtn' />
                         </form>
                     </div>

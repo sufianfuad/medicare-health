@@ -1,5 +1,6 @@
 .navigation{
-    background-color: rgba(82, 121, 219, 0.835);
+    /* background-color: rgba(82, 121, 219, 0.835); */
+    background-color: rgb(20, 41, 82);
 }
 .navigation:hover{
     transition: 2s;
@@ -13,9 +14,9 @@
     /* color: #1c44a8; */
     /* color: #132031; */
     /* color: #53cc07; */
-    color: #172a35;
+    /* color: #9DC4D3; */
     /* color: #2952AE; */
-    /* color: #2382C4; */
+    color: #2382C4;
 }
 .menu-logo img{
     width: 60px;

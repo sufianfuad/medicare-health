@@ -8,9 +8,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHospitalUser } from '@fortawesome/free-solid-svg-icons';
 //CSS
 import './Booking.css';
-const Booking = ({ booking, date }) => {
+const Booking = ({ booking, todayDates, setAppointmentSuccess, appointmentSuccess }) => {
     //==
-    const { name, time, space, doctor } = booking;
+    const { name, time, space, doctor, price } = booking;
     //==
     const [openBooking, setOpenBooking] = React.useState(false);
     const handleBookingOpen = () => setOpenBooking(true);
@@ -31,6 +31,10 @@ const Booking = ({ booking, date }) => {
                         {doctor}
                     </Typography>
                     <Typography sx={{ color: 'warning.main', fontWeight: 600 }} variant="caption" display="block" gutterBottom>
+                        Price ${price}
+                    </Typography>
+
+                    <Typography sx={{ color: 'warning.main', fontWeight: 600 }} variant="caption" display="block" gutterBottom>
                         {space} SPACES AVAILABLE
                     </Typography>
                     <Button onClick={handleBookingOpen} variant="contained">
@@ -38,10 +42,13 @@ const Booking = ({ booking, date }) => {
                 </Paper>
             </Grid >
             <BookingModal
-                date={date}
+                // date={date}
+                todayDates={todayDates}
                 booking={booking}
                 openBooking={openBooking}
                 handleBookingClose={handleBookingClose}
+                appointmentSuccess={appointmentSuccess}
+                setAppointmentSuccess={setAppointmentSuccess}
             ></BookingModal>
         </>
     );

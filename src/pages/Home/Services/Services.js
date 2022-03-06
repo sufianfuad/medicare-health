@@ -56,12 +56,7 @@ const Services = () => {
                                     ></SingleService>)
                                 )
                         }
-                        {/* {
-                            services.map(service => <SingleService
-                                key={service.id}
-                                service={service}
-                            ></SingleService>)
-                        } */}
+
                         <div className="pagination">
                             {/* {
                             [...Array(pageCount).keys()].map(number => <button

@@ -1,6 +1,7 @@
 
 .doctor-card{
-    width: 350px;
+    width: 360px;
+    height: 440px;
     margin: 15px;
     /* border: 1px solid tomato; */
     border-radius: 0 0 15px 15px;
@@ -12,9 +13,10 @@
     padding: 5px;
 }
 .doctor-img img{
-    /* width: 300px; */
+    height: 225px;
     border-radius: 10px;
     width: 100%;
+    object-fit: content;
 }
 .doctor-info{
     margin-bottom: 10px;
@@ -22,4 +24,27 @@
 }
 .appointment-icon{
     color: rgba(83, 16, 92, 0.911);
+}
+.p-color{
+    color: #610094;
+}
+.appointment-btn{
+    position: relative;
+    top: 0;
+    outline: none;
+    border: none;
+    padding: 8px 12px;
+    color: #F0F5F9;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 0 5px 0 #c2c0c0;
+    background-image: linear-gradient(90deg, #5f9dee, #275188);
+    cursor: pointer;
+}
+.appointment-btn:active{
+    top: 5px;
+    box-shadow: 0 2px #c2c0c0;
+    border-bottom: 1px solid #f0f0f0;
 }

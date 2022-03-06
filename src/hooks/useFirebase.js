@@ -28,6 +28,7 @@ const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(true);
     //Admin
     const [admin, setAdmin] = useState(false);
+
     const [doctorRole, setDoctorRole] = useState(false);
     // const [attend, setAttend] = useState(false);
     const [token, setToken] = useState('');

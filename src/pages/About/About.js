@@ -5,6 +5,7 @@ import Header from '../Shared/Header/Header';
 import './About.css'
 import { Link } from 'react-router-dom';
 import Footer from '../Shared/Footer/Footer';
+import Review from '../Home/Review/Review';
 
 const About = () => {
     return (
@@ -14,7 +15,7 @@ const About = () => {
                 <div className="about-container">
                     <div className="container">
                         <div className="row  d-flex align-items-center about">
-                            <div className="col-lg-5 col-md-5 col-sm-6">
+                            <div className="col-lg-5 col-md-5 col-12">
                                 {/* about details  */}
                                 <div className="about-info">
                                     <h2 className="animate__animated animate__heartBeat fw-bold">Medical Services That You Can Trust.</h2>
@@ -26,8 +27,8 @@ const About = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-7 col-md-7 col-sm-6">
-                                <div className="about-img">
+                            <div className="col-lg-7 col-md-7 col-12">
+                                <div className="about-img m-2">
                                     <img src={img5} alt="" />
                                 </div>
                             </div>
@@ -72,6 +73,7 @@ const About = () => {
                                 </div>
                             </div>
                         </div>
+                        <Review></Review>
                     </div>
                 </div>
             </div>

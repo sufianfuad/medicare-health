@@ -38,14 +38,14 @@ const Contact = () => {
     return (
         <section className="contact-container text-center">
             <div className='services-title'>
-                <h2 className='text-white'>Contact Us </h2>
+                <h2 className='text-white'>Get In Touch</h2>
             </div>
             <div className="container">
                 <div className="row d-flex align-items-center">
                     <div className="col-md-7">
                         {/* <div className="row">
                             <div className="col-md-9"> */}
-                        <div className="contact-formArea" data-aos="flip-left"
+                        <div className="contact-formArea mb-2" data-aos="flip-left"
                             data-aos-duration="2000">
                             <h4>Let's Contact with us
                                 <br />
@@ -110,61 +110,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
-{/* <section className='contact-container'>
-            <div className='text-center text-white'>
-                <h2>Contact Us</h2>
-            </div>
-            <div className="row">
-                <div className="container">
-                    <div className="col-lg-8">
-                        <div className="contacts-form pb-3 container">
-                            <h4 className='contacts-form-title text-white'>Let's Contacts with us </h4>
-                            <form className='js-form'
-                            // ref={form} onSubmit={sendEmail}
-                            >
-                                <div className='client-name text-center'>
-                                    <div className='form-group'>
-                                        <input className='form-field js-field-name'
-                                            type="text"
-                                            name='user-name'
-                                            required
-                                            placeholder='Your Name*'
-                                            id='validationCustom01' />
-                                    </div>
-                                    <div className='form-group'>
-                                        <input className='form-field js-field-name'
-                                            type="text"
-                                            name='user-name'
-                                            required
-                                            placeholder='Your Name*'
-                                            id='validationCustom01' />
-                                    </div>
-                                </div>
-
-                                <div className='form-group'>
-                                    <input className='form-field js-field-name'
-                                        type="text"
-                                        name='email'
-                                        required
-                                        placeholder='Your Email*' />
-                                </div>
-                                <div className='form-group'>
-                                    <textarea className='form-field js-field-name'
-                                        type="text"
-                                        name='message'
-                                        required
-                                        placeholder='Type your message here' />
-                                </div>
-                                <div className=''>
-                                    <button className='send-btn' type="submit" value='Send'>
-                                        Send
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section> */}

@@ -1,0 +1,38 @@
+.profileCard{
+    height: 480px;
+    width: 420px;
+    margin: 10px;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    box-shadow:0 20px 30px rgba(0, 0, 0, 0.4);
+    background-color: #1C658C;
+    color: #EEEEEE;
+    border-radius: 20px;
+
+}
+.profile_Dlt_Btn{
+    width: 50%;
+    outline: none;
+    border: none;
+    padding: 10px 17px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 7px;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 7px 0 aliceblue;
+    top: 0;
+    background-image: linear-gradient(90deg, #b34581, #740642);
+    /* background-image: linear-gradient(90deg, #5f9dee, #275188); */
+}
+.profile_Dlt_Btn:active{
+    top: 5px;
+    box-shadow: 0 2px 0 #9b0b5a;
+}
+.pi-icon{
+    color: #F0F5F9;
+    font-size: 20px;
+}

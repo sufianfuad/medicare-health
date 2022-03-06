@@ -72,3 +72,37 @@ ul{
     top: 5px;
     box-shadow: 0 2px ;
 }
+
+.icons-container{
+    width: 200px;
+    padding: 3px;
+    border-radius: 10px;
+}
+.footerIcon{
+    margin: 5px;
+    padding: 0px 8px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    /* background-color: rgb(70, 66, 66); */
+    background-color: #339AF0;
+    
+}
+.footerIcon:hover{
+    background-color: #fff;
+    color: #339AF0;
+    /* color: rgb(58, 87, 148); */
+}
+
+
+.download-btn{
+    width: 100px;
+}
+.download-btn img {
+  display: block;
+  cursor: pointer;
+}
+.download-btn img:last-child {
+  margin-top: 20px;
+}

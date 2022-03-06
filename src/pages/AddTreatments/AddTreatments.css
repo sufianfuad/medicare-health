@@ -23,9 +23,10 @@
     align-items: center;
     justify-content: center;
 }
-.form-container input, textarea{
+.form-container form input, textarea{
     width: 60%;
     margin-bottom: 15px;
-    padding: 5px;
+    padding: 10px;
+    margin: 5px;
     border-radius: 10px;
 }

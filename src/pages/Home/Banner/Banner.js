@@ -20,7 +20,7 @@ const Banner = () => {
                             />
                         </div>
                         <Carousel.Caption>
-                            <h3 className="slider-title">Entrust your health our doctors</h3>
+                            <h3 className="slider-title">Entrust your health with our service</h3>
                             <p className="slider-text">Medical Services That You Can Trust</p>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -34,8 +34,8 @@ const Banner = () => {
 
                         </div>
                         <Carousel.Caption>
-                            <h3 className="slider-title">Entrust your health our doctors</h3>
-                            <p className="slider-text">Be Happy now i so simple.</p>
+                            <h3 className="slider-title">Entrust your health with our service</h3>
+                            <p className="slider-text">Be Happy Be Healthy</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -47,7 +47,7 @@ const Banner = () => {
                             />
                         </div>
                         <Carousel.Caption>
-                            <h3 className="slider-title">Entrust your health our doctors</h3>
+                            <h3 className="slider-title">Entrust your health with our service</h3>
                             <p className="slider-text">Be attentive to your health</p>
                         </Carousel.Caption>
                     </Carousel.Item>

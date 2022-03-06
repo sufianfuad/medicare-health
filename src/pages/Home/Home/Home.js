@@ -6,19 +6,50 @@ import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import Banner from '../Banner/Banner';
 import Doctors from '../Doctors/Doctors';
-import Services from '../Services/Services';
-//
+// import Review from '../Review/Review';
 
+// import Services from '../Services/Services';
+import TestCenter from '../TestCenter/TestCenter';
+import { Card, CardContent, Grid, Rating, Typography } from '@mui/material';
+import { Box } from '@mui/system';
+import { Container } from 'react-bootstrap';
+import StarIcon from '@mui/icons-material/Star';
+
+//react font awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
+
+
+//CSS
 import './Home.css';
 
 const Home = () => {
 
     const [homeService, setHomeService] = useState([]);
+    const [homeReview, setHomeReview] = useState([]);
 
+    // react font awesome
+    const rightArow = <FontAwesomeIcon icon={faArrowCircleRight} />
+    const labels = {
+        1: 'Useless',
+        2: 'Poor',
+        3: 'Ok',
+        4: 'Good',
+        5: 'Excellent',
+    };
+    //For Service
     useEffect(() => {
         fetch('http://localhost:7000/treatments')
             .then(res => res.json())
             .then(data => setHomeService(data))
+    }, []);
+    //For Review
+    useEffect(() => {
+        fetch('http://localhost:7000/reviews')
+            .then(res => res.json())
+            .then(data => {
+                setHomeReview(data)
+            })
     }, [])
 
     return (
@@ -33,7 +64,7 @@ const Home = () => {
                         </div>
                     </div>
                     {
-                        homeService.slice(0, 6).map(
+                        homeService.slice(0, 3).map(
                             service =>
                                 <div className="col-lg-4 col-md-4 col-12">
                                     <div className="service-card">
@@ -43,7 +74,8 @@ const Home = () => {
                                             </div>
                                             <div className="service-info pt-3">
                                                 <h4><span className="service-title fw-bold">{service?.name}</span></h4>
-                                                <p><span className="text"><strong>About <small>{service?.name}: </small></strong></span> {service?.description}</p>
+                                                <p>{service.deptHead}</p>
+                                                <p><span className="text"><strong>About <small>{service?.name}: </small></strong></span> {service?.description.slice(0, 130)}</p>
                                             </div>
                                             <Link to={`/sitbooking/${service?.id}`}>
                                                 <button className="btn px-3 py-2 details">Details</button>
@@ -53,14 +85,93 @@ const Home = () => {
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                         )
                     }
+                    <div className='text-center mt-3'>
+                        <Link to="/services">
+                            <button className='view-btn'>View More <span>{rightArow}</span> </button>
+                        </Link>
+                    </div>
+
                 </div>
             </div>
             {/* <Services></Services> */}
             <Sanitizer></Sanitizer>
+            <TestCenter></TestCenter>
             <Doctors></Doctors>
+            <div className="reviews-container">
+                <Container>
+                    <Typography variant='h4' sx={{
+                        color: '#212529', textAlign: 'center',
+                        fontWeight: 'bold',
+                        marginTop: '25px',
+                    }} gutterBottom="div">
+                        Testimonials
+                    </Typography>
+                    <Box sx={{ flexGrow: 1 }}>
+                        <Grid container spacing={2}>
+                            {
+                                homeReview.slice(0, 3).map(rw =>
+                                    <Grid item xs={12} md={4}>
+                                        <Card sx={{
+                                            minWidth: 200,
+                                            minHeight: 200,
+                                            margin: '20px',
+                                            backgroundColor: 'aliceblue'
+                                        }}>
+                                            <CardContent>
+
+                                                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                                                    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                                                        {" "}
+                                                        <div className='profile-img'>
+                                                            <img src={rw?.pic} alt="pic" />
+                                                        </div>
+                                                        {" "}
+                                                        <Typography variant="h6" color="text.secondary" gutterBottom="div">
+                                                            {rw?.username}
+                                                        </Typography>
+
+                                                        <Typography variant="caption" display="block" gutterBottom="div">
+                                                            {rw?.email}
+                                                        </Typography>
+                                                    </Box>
+                                                    <Box
+                                                        sx={{ width: 200, display: "flex", alignItems: "center" }}>
+                                                        <Rating
+                                                            name="text-feedback"
+                                                            value={rw.rating}
+                                                            readOnly
+                                                            precision={0.5}
+                                                            emptyIcon={<StarIcon style={{ opacity: 0.55 }}
+                                                                fontSize="inherit" />} />
+                                                        <Box sx={{ ml: 1 }}> {labels[rw.rating]}</Box>
+                                                    </Box>
+                                                </Box>
+                                            </CardContent>
+                                            <Box>
+                                                <Typography
+                                                    variant="subtitle2"
+                                                    sx={{
+                                                        textAlign: 'center',
+                                                        color: 'darkslategray', mt: 3
+                                                    }}
+                                                    gutterBottom="div">
+                                                    {rw.feedback}
+                                                </Typography>
+                                            </Box>
+
+                                        </Card>
+                                    </Grid>
+                                )
+                            }
+                        </Grid>
+                    </Box>
+                </Container>
+            </div>
+            {/* <Review></Review> */}
             <Contact></Contact>
             <Footer></Footer>
         </div>

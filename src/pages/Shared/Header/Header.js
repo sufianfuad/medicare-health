@@ -16,13 +16,16 @@ const Header = () => {
 
     return (
         <>
-            <Navbar className="navigation" collapseOnSelect expand="lg" sticky="top">
+            <Navbar className="navigation" collapseOnSelect expand="lg">
                 <Container>
                     <div className="d-flex justify-content-center align-items-center">
                         <div className="menu-logo me-2">
                             <img src={menuLogo} className="" alt="" />
                         </div>
-                        <Navbar.Brand href="#home" className="title text-white"><span className="title-color">Medi</span>Care</Navbar.Brand>
+                        <Link to="/">
+                            <Navbar.Brand className="title text-white"><span className="title-color">Medi</span>Care</Navbar.Brand>
+                        </Link>
+
                     </div>
 
                     <Navbar.Toggle />
@@ -38,18 +41,14 @@ const Header = () => {
                             to="/services"
                             className="item"
                         >Services</Nav.Link>
-
-                        <Nav.Link
-                            as={Link}
-                            to="/profile"
-                            className="item"
-                        >Profile</Nav.Link>
-
-                        {/* <Nav.Link
-                            as={Link}
-                            to="/appointment"
-                            className="item"
-                        >Appointment</Nav.Link> */}
+                        {
+                            user?.email &&
+                            <Nav.Link
+                                as={Link}
+                                to="/profile"
+                                className="item"
+                            >Profile</Nav.Link>
+                        }
 
                         {
                             user?.email &&
@@ -59,18 +58,12 @@ const Header = () => {
                                 className="item"
                             >Dashboard
                             </Nav.Link>
-
                         }
-                        {
-                            user?.email &&
-                            <Nav.Link
-                                as={Link}
-                                to="/addTreatments"
-                                className="item"
-                            >AddTreatments
-                            </Nav.Link>
-
-                        }
+                        {/* <Nav.Link
+                            as={Link}
+                            to="/appointment"
+                            className="item"
+                        >Appointment</Nav.Link> */}
 
                         <Nav.Link
                             as={Link}

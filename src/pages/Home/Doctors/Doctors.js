@@ -23,7 +23,7 @@ const Doctors = () => {
     return (
         <section className='doctors-container text-center '>
             <div className='services-title'>
-                <h2> Our Doctors {doctors.length}</h2>
+                <h2> Our Doctors</h2>
             </div>
             {/* <Container>
                 <Grid container spacing={2}>

@@ -25,7 +25,7 @@ import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import About from './pages/About/About';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import AddTreatments from './pages/AddTreatments/AddTreatments';
-import Payment from './pages/Payment/Payment';
+// import Payment from './pages/Payment/Payment';
 import ManageTreatments from './pages/ManageTreatments/ManageTreatments';
 import Profile from './pages/Profile/Profile';
 
@@ -66,9 +66,9 @@ function App() {
               <AddTreatments></AddTreatments>
             </PrivateRoute>
 
-            <PrivateRoute path="/payment">
+            {/* <PrivateRoute path="/payment">
               <Payment></Payment>
-            </PrivateRoute>
+            </PrivateRoute> */}
 
             <PrivateRoute path="/manageTreatments">
               <ManageTreatments></ManageTreatments>
