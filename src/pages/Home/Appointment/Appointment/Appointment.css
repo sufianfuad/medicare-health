@@ -11,3 +11,6 @@
     box-shadow: 2px 4px 10px gray;
     border-radius: 5px;
 }
+.appointment-banner img{
+    width: 100%;
+}

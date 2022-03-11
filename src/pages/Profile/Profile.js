@@ -30,7 +30,7 @@ const Profile = () => {
 
     const onSubmit = data => {
         console.log(data)
-        axios.post('http://localhost:7000/user_info', data)
+        axios.post('https://damp-refuge-56099.herokuapp.com/user_info', data)
             .then(res => {
                 if (res.data.insertedId) {
                     Swal.fire(`${user?.displayName} successfully added your details`);

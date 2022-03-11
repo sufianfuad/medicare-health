@@ -55,7 +55,7 @@ const BookingModal = ({ booking, openBooking, handleBookingClose, todayDates, se
         // console.log(appointment);
 
         // data Server a Send korchi
-        fetch('http://localhost:7000/appointments', {
+        fetch('https://damp-refuge-56099.herokuapp.com/appointments', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

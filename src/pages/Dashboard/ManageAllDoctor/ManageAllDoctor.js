@@ -15,7 +15,7 @@ const ManageAllDoctor = () => {
     const loader = <FontAwesomeIcon icon={faSpinner} />
 
     useEffect(() => {
-        fetch('http://localhost:7000/allDoctors')
+        fetch('https://damp-refuge-56099.herokuapp.com/allDoctors')
             .then(res => res.json())
             .then(data => setAllDoctor(data))
     }, []);
@@ -24,7 +24,7 @@ const ManageAllDoctor = () => {
     const handleDeleteDoctor = id => {
         const proceed = window.confirm('Are you sure, want to delete doctor')
         if (proceed) {
-            const url = `http://localhost:7000/add_doctor/${id}`;
+            const url = `https://damp-refuge-56099.herokuapp.com/add_doctor/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

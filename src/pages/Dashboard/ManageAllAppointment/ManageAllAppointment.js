@@ -6,7 +6,7 @@ const ManageAllAppointment = () => {
     const [allAppointments, setAllAppointments] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:7000/allAppointments')
+        fetch('https://damp-refuge-56099.herokuapp.com/allAppointments')
             .then(res => res.json())
             .then(data => {
                 setAllAppointments(data)
@@ -16,7 +16,7 @@ const ManageAllAppointment = () => {
     const handleDeleteAppointment = id => {
         const proceed = window.confirm('Are you sure, want to delete this profile')
         if (proceed) {
-            const url = `http://localhost:7000/appointments/${id}`;
+            const url = `https://damp-refuge-56099.herokuapp.com/appointments/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

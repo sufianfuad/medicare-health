@@ -17,7 +17,7 @@ const TestCenter = () => {
     const loader = <FontAwesomeIcon icon={faSpinner} />
 
     useEffect(() => {
-        fetch('http://localhost:7000/test_center',)
+        fetch('https://damp-refuge-56099.herokuapp.com/test_center',)
             .then(res => res.json())
             .then(data => setTestCenters(data))
     }, []);

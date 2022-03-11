@@ -42,13 +42,13 @@ const Home = () => {
     };
     // Service er jonno
     useEffect(() => {
-        fetch('http://localhost:7000/treatments')
+        fetch('https://damp-refuge-56099.herokuapp.com/treatments')
             .then(res => res.json())
             .then(data => setHomeService(data))
     }, []);
     //Review  er jonno
     useEffect(() => {
-        fetch('http://localhost:7000/reviews')
+        fetch('https://damp-refuge-56099.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => {
                 setHomeReview(data)

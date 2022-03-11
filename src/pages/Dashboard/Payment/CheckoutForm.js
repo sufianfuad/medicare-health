@@ -19,7 +19,7 @@ const CheckoutForm = ({ appointment }) => {
     const [clientSecret, setClientSecret] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:7000/create-payment-intent', {
+        fetch('https://damp-refuge-56099.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -92,7 +92,7 @@ const CheckoutForm = ({ appointment }) => {
                 last4: paymentMethod.card.last4,
                 transaction: paymentIntent.client_secret.slice('_secret')[0],
             }
-            const url = `http://localhost:7000/appointments/${_id}`;
+            const url = `https://damp-refuge-56099.herokuapp.com/appointments/${_id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {

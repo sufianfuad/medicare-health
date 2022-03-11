@@ -15,16 +15,10 @@ const SitBooking = () => {
 
     //data load
     useEffect(() => {
-        fetch(`http://localhost:7000/treatments/${bookingId}`)
+        fetch(`https://damp-refuge-56099.herokuapp.com/treatments/${bookingId}`)
             .then(res => res.json())
             .then(data => setDetails(data))
     }, []);
-
-    //call after data load
-    // useEffect(() => {
-    //     const foundDetails = details?.find(dt => dt.id === bookingId)
-    //     setSingleDetails(foundDetails);
-    // }, [details])
 
     return (
         <>

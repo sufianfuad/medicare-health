@@ -24,7 +24,7 @@ const AddDoctor = () => {
         formData.append('doctorEmail', doctorEmail);
         formData.append('doctorPic', doctorPic);
 
-        fetch('http://localhost:7000/add_doctor', {
+        fetch('https://damp-refuge-56099.herokuapp.com/add_doctor', {
             method: 'POST',
             // headers: {
             //     'content-type': 'application/json'

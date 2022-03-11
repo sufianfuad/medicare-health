@@ -6,7 +6,7 @@ const ManageAllProfile = () => {
     const [allProfiles, setAllProfiles] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:7000/allProfiles')
+        fetch('https://damp-refuge-56099.herokuapp.com/allProfiles')
             .then(res => res.json())
             .then(data => setAllProfiles(data))
     }, []);
@@ -15,7 +15,7 @@ const ManageAllProfile = () => {
     const handleDeleteProfile = id => {
         const proceed = window.confirm('Are you sure, want to delete this profile')
         if (proceed) {
-            const url = `http://localhost:7000/user_info/${id}`;
+            const url = `https://damp-refuge-56099.herokuapp.com/user_info/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

@@ -10,7 +10,7 @@ const Reviews = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:7000/reviews', data)
+        axios.post('https://damp-refuge-56099.herokuapp.com/reviews', data)
             .then(res => {
                 alert('Thanks a lot')
                 reset();

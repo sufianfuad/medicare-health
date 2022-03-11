@@ -21,7 +21,7 @@ const MakeDoctor = () => {
 
     const onSubmit = data => {
         const doctor = { email };
-        fetch('http://localhost:7000/doctors/doctor', {
+        fetch('https://damp-refuge-56099.herokuapp.com/doctors/doctor', {
             method: 'PUT',
             headers: {
                 // 'authorization': `Bearer ${token}`,

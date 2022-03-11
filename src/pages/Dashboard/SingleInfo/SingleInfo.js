@@ -21,7 +21,7 @@ const SingleInfo = ({ info, handleDeleteInfo }) => {
     // const handleDeleteInfo = id => {
     // const proceed = window.confirm('Are you sure, want to delete this profile')
     // if (proceed) {
-    //     const url = `http://localhost:7000/user_info/${id}`;
+    //     const url = `https://damp-refuge-56099.herokuapp.com/user_info/${id}`;
     //     fetch(url, {
     //         method: 'DELETE'
     //     })
@@ -59,7 +59,7 @@ const SingleInfo = ({ info, handleDeleteInfo }) => {
     // Swal.fire('Are you sure, want to delete your information');
     // window.confirm('Are you sure, want to delete your information')
     // if (proceed) {
-    // const url = `http://localhost:7000/user_info/${id}`;
+    // const url = `https://damp-refuge-56099.herokuapp.com/user_info/${id}`;
     // fetch(url, {
     //     method: 'DELETE'
     // })

@@ -13,7 +13,7 @@ const AddTreatments = () => {
 
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:7000/treatments', data)
+        axios.post('https://damp-refuge-56099.herokuapp.com/treatments', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Successfully Added');

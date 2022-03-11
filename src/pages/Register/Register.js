@@ -58,26 +58,25 @@ const Register = () => {
     return (
         <>
             <Header></Header>
-            <Container className="toogle">
+            <Container className="">
                 <Box sx={{ width: '100%' }}>
                     <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
                         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered>
                             <Tab label="Users" {...a11yProps(0)} />
-                            <Tab label="Doctor" {...a11yProps(1)} />
-                            <Tab label="Medical Attendee" {...a11yProps(2)} />
+                            {/* <Tab label="Doctor" {...a11yProps(1)} /> */}
+                            {/* <Tab label="Medical Attendee" {...a11yProps(2)} /> */}
                         </Tabs>
                     </Box>
                     <TabPanel className="tab_bg" value={value} index={0}>
                         {/* <User></User> */}
                         <Users></Users>
                     </TabPanel>
-                    <TabPanel className="tab_bg text-white" value={value} index={1}>
+                    {/* <TabPanel className="tab_bg text-white" value={value} index={1}>
                         <Doctor></Doctor>
-                    </TabPanel>
-                    <TabPanel className="tabbg" value={value} index={2}>
-                        {/* <Medical></Medical> */}
-                        {/* <Attendee></Attendee> */}
-                    </TabPanel>
+                    </TabPanel> */}
+                    {/* <TabPanel className="tabbg" value={value} index={2}>
+                        <Attendee></Attendee>
+                    </TabPanel> */}
                 </Box>
             </Container>
             <Footer />

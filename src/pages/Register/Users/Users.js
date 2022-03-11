@@ -55,7 +55,7 @@ const Users = () => {
                                             <input
                                                 name="name"
                                                 onBlur={handleOnBlur}
-                                                // onBlur={handleOnBlur}
+
                                                 className="form-control"
                                                 placeholder="Enter your Name"
                                                 required
@@ -68,7 +68,7 @@ const Users = () => {
                                                 name="email"
                                                 type="email"
                                                 onBlur={handleOnBlur}
-                                                // onBlur={handleOnBlur}
+
                                                 className="form-control"
                                                 placeholder="Enter your Email"
                                                 required
@@ -81,7 +81,6 @@ const Users = () => {
                                                 type="password"
                                                 name="password"
                                                 onBlur={handleOnBlur}
-                                                // onBlur={handleOnBlur}
                                                 className="form-control"
                                                 placeholder="password at least 6 digit"
                                             />
@@ -92,7 +91,7 @@ const Users = () => {
                                                 type="password"
                                                 name="password2"
                                                 onBlur={handleOnBlur}
-                                                // onBlur={handleOnBlur}
+
                                                 className="form-control"
                                                 placeholder="Confirm Password"
                                             />

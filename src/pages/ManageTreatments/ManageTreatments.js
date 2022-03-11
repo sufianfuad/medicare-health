@@ -8,7 +8,7 @@ const ManageTreatments = () => {
     const [manageTreatment, setManageTreatment] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:7000/treatments')
+        fetch('https://damp-refuge-56099.herokuapp.com/treatments')
             .then(res => res.json())
             .then(data => setManageTreatment(data))
     }, []);
@@ -16,7 +16,7 @@ const ManageTreatments = () => {
     const handleDeleteTreatment = (e, id) => {
         const proceed = window.confirm('Are you sure, You want to delete this services')
         if (proceed) {
-            const url = `http://localhost:7000/treatments/${id}`;
+            const url = `https://damp-refuge-56099.herokuapp.com/treatments/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

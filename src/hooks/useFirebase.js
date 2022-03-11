@@ -98,7 +98,7 @@ const useFirebase = () => {
     //SaveDoctor
     const saveDoctor = (email, displayName, number, method) => {
         const doctor = { email, displayName, number }
-        fetch('http://localhost:7000/doctors', {
+        fetch('https://damp-refuge-56099.herokuapp.com/doctors', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -171,7 +171,7 @@ const useFirebase = () => {
     //Save USER
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('http://localhost:7000/users', {
+        fetch('https://damp-refuge-56099.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -181,7 +181,7 @@ const useFirebase = () => {
             .then()
     }
     useEffect(() => {
-        fetch(`http://localhost:7000/users/${user?.email}`)
+        fetch(`https://damp-refuge-56099.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data.admin);
@@ -192,7 +192,7 @@ const useFirebase = () => {
     //Save Doctor
     // const saveDoctor = (email, displayName, number, method) => {
     //     const doctor = { email, displayName, number }
-    //     fetch('http://localhost:7000/doctors', {
+    //     fetch('https://damp-refuge-56099.herokuapp.com/doctors', {
     //         method: method,
     //         headers: {
     //             'content-type': 'application/json'
@@ -202,7 +202,7 @@ const useFirebase = () => {
     //         .then()
     // }
     // useEffect(() => {
-    //     fetch(`http://localhost:7000/doctors/${doctor?.email}`)
+    //     fetch(`https://damp-refuge-56099.herokuapp.com/doctors/${doctor?.email}`)
     //         .then(res => res.json())
     //         .then(data => {
     //             setDoc(data.doctor);
@@ -212,7 +212,7 @@ const useFirebase = () => {
     // save attendee
     // const saveAttendee = (email, displayName, number, method) => {
     //     const attendee = { email, displayName, number }
-    //     fetch('http://localhost:7000/attendees', {
+    //     fetch('https://damp-refuge-56099.herokuapp.com/attendees', {
     //         method: method,
     //         headers: {
     //             'content-type': 'application/json'
@@ -224,13 +224,13 @@ const useFirebase = () => {
 
     // Attendee
     // useEffect(() => {
-    //     fetch(`http://localhost:7000/attendees/${attendee.email}`)
+    //     fetch(`https://damp-refuge-56099.herokuapp.com/attendees/${attendee.email}`)
     //         .then(res => res.json())
     //         .then(data => setAttend(data.attendee))
     // }, [attendee.email]);
 
     // useEffect(() => {
-    //     fetch(`http://localhost:7000/doctors/${doctor?.email}`)
+    //     fetch(`https://damp-refuge-56099.herokuapp.com/doctors/${doctor?.email}`)
     //         .then(res => res.json())
     //         .then(data => {
     //             setDoctorRole(data.doctorRole)

@@ -2,8 +2,9 @@ import React from 'react';
 //logo
 import footerLogo from '../../../images/logo.jpg';
 //Image
-import appStore from '../../../images/logo/app-store.png';
+// import appStore from '../../../images/logo/app-store.png';
 import playStore from '../../../images/logo/play-store.png';
+import sslCommerze from '../../../images/ssl-commerce.1d268dce.png';
 
 //CSS
 import './Footer.css';
@@ -12,7 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faFacebookSquare, faInstagram, faLinkedinIn, faTwitter
 } from '@fortawesome/free-brands-svg-icons';
-import { faHandPointRight, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHandPointRight } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
     return (
@@ -82,8 +83,9 @@ const Footer = () => {
                             <div className="footer-links">
                                 <h3>Download Link</h3>
                                 <div className="download-btn">
-                                    <img src={appStore} alt="" />
+                                    {/* <img src={appStore} alt="" /> */}
                                     <img src={playStore} alt="" />
+                                    <img src={sslCommerze} alt="" />
                                 </div>
 
                             </div>
@@ -91,7 +93,7 @@ const Footer = () => {
                     </div>
                     <hr />
                 </div>
-                <p className="text-center">Copyright &copy; All Right Reserved, 2022</p>
+                <p className="text-center">Copyright &copy; All Right Reserved Medicare, 2022</p>
             </div>
         </div>
     );

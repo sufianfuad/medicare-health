@@ -11,7 +11,7 @@ const AddTestCenter = () => {
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('http://localhost:7000/test_center', data)
+        axios.post('https://damp-refuge-56099.herokuapp.com/test_center', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Successfully Added');

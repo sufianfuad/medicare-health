@@ -18,7 +18,7 @@ const Appointments = ({ todayDates }) => {
     const [appointments, setAppointments] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:7000/appointments?email=${user.email}&todayDates=${todayDates}`
+        const url = `https://damp-refuge-56099.herokuapp.com/appointments?email=${user.email}&todayDates=${todayDates}`
         fetch(url)
             .then(res => res.json())
             .then(data => {

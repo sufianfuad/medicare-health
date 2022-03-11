@@ -15,7 +15,7 @@ const Review = () => {
         5: 'Excellent',
     };
     useEffect(() => {
-        fetch('http://localhost:7000/reviews')
+        fetch('https://damp-refuge-56099.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => {
                 allRating(data);

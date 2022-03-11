@@ -23,7 +23,7 @@ const Doctors = () => {
     const loader = <FontAwesomeIcon icon={faSpinner} />
 
     useEffect(() => {
-        fetch('http://localhost:7000/add_doctor')
+        fetch('https://damp-refuge-56099.herokuapp.com/add_doctor')
             .then(res => res.json())
             .then(data => setDoctors(data))
     }, [])

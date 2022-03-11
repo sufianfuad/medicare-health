@@ -17,7 +17,7 @@ const Services = () => {
     const loader = <FontAwesomeIcon icon={faSpinner} />
 
     useEffect(() => {
-        fetch('http://localhost:7000/treatments')
+        fetch('https://damp-refuge-56099.herokuapp.com/treatments')
             .then(res => res.json())
             .then(data => {
                 setServices(data);
